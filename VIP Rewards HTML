@@ -1,0 +1,302 @@
+<!-- MOZZ VIP Program | Loyalty landing page | v4 -->
+<!-- PopMenu custom block. All styles inline. No font declarations. Image src values left blank for Pat to fill. -->
+<style>
+@keyframes mozzFloatBob { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
+@keyframes mozzModalIn { 0% { opacity: 0; transform: translateY(16px); } 100% { opacity: 1; transform: translateY(0); } }
+</style>
+
+<div id="mozz-vip" style="background:#ede6dd;color:#2b2b2b;width:100%;margin:0;padding:0;overflow:hidden;">
+
+  <!-- TILE BORDER | TOP -->
+  <div aria-hidden="true" style="width:100%;line-height:0;font-size:0;">
+    <div style="display:flex;width:100%;margin:0;padding:0;">
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#91c8b6;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#779d6f;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#ac9984;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#136d5e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#779d6f;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#e3833e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#91c8b6;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#e3833e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#da3c32;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#779d6f;margin:0;padding:0;"></div>
+    </div>
+    <div style="display:flex;width:100%;margin:0;padding:0;">
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#da3c32;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#136d5e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#e3833e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#da3c32;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#91c8b6;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#da3c32;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#ac9984;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#136d5e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#e3833e;margin:0;padding:0;"></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="vip-hero" style="margin:0;padding:clamp(48px,8vw,96px) 0 0;text-align:center;">
+    <div style="max-width:1080px;margin:0 auto;padding:0 16px;">
+    <p style="margin:0 0 18px;color:#357568;font-size:clamp(20px,3vw,30px);font-weight:700;font-style:italic;letter-spacing:0.01em;">Introducing our new</p>
+    <h1 style="margin:0 auto;max-width:900px;color:#ede6dd;-webkit-text-stroke:2px #357568;font-size:clamp(44px,9vw,104px);line-height:1.02;letter-spacing:0.02em;text-transform:uppercase;font-weight:400;">VIP Rewards Program</h1>
+    <p style="margin:24px auto 0;max-width:560px;font-size:clamp(16px,2vw,19px);line-height:1.6;color:#2b2b2b;">Say hello to MOZZ VIP. Earn points on every order and trade them for the things you already love: ranch, cookies, garlic bread, and whole pizzas, on us.</p>
+    <div style="margin:36px 0 0;">
+      <a href="#vip-rewards" style="display:inline-block;background:#357568;color:#ede6dd;text-decoration:none;text-transform:uppercase;font-weight:800;font-size:clamp(17px,2.4vw,24px);letter-spacing:0.06em;padding:18px 36px;border-radius:0;box-shadow:8px 8px 0 #b1a08d;">See New Rewards</a>
+    </div>
+    </div>
+    <!-- Hero food: pizza bleeds off the bottom left corner, sauces sit bottom right, matching the launch graphic. -->
+    <div style="position:relative;height:clamp(230px,34vw,460px);margin:40px 0 0;width:100%;overflow:hidden;">
+      <img src="https://popmenucloud.com/cdn-cgi/image/width=900,format=auto,fit=scale-down/tdrspvzk/78ce4eb4-0a19-46dd-b4ba-2cf8c1b5ec78.png" alt="MOZZ sourdough pepperoni pizza with jalapeños" style="position:absolute;left:-14%;bottom:-32%;width:clamp(300px,58%,600px);height:auto;margin:0;">
+      <img src="https://popmenucloud.com/cdn-cgi/image/width=600,format=auto,fit=scale-down/tdrspvzk/f403469e-c5ed-412e-8bea-04adb73e892b.png" alt="Hot honey and Italian seasoning in small bowls" style="position:absolute;right:5%;bottom:8%;width:clamp(150px,30%,320px);height:auto;margin:0;animation:mozzFloatBob 4s ease-in-out infinite;">
+    </div>
+  </section>
+
+  <!-- PERKS | IT PAYS TO BE A VIP | single graphic. Background matches the image edge so it bleeds full width. -->
+  <section style="background:#166e60;margin:0;padding:0;line-height:0;text-align:center;">
+    <a href="#vip-locations" data-vip-join="vip_graphic" style="display:block;max-width:1020px;margin:0 auto;padding:0;">
+      <img src="https://popmenucloud.com/cdn-cgi/image/width=1020,format=auto,fit=scale-down/tdrspvzk/d3d110ae-cbc6-4207-ad2b-1cdf04d15daa.png" alt="It pays to be a VIP: 4 points for every dollar, 100 point sign-up bonus, $3 off during your birthday month. Learn more." style="display:block;width:100%;height:auto;margin:0;">
+    </a>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="max-width:1080px;margin:0 auto;padding:clamp(56px,8vw,88px) 16px 0;">
+    <div style="display:flex;align-items:center;gap:16px;margin:0 0 40px;">
+      <div style="flex:1 1 auto;height:2px;background:#357568;"></div>
+      <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;font-size:15px;white-space:nowrap;">How It Works</p>
+      <div style="flex:1 1 auto;height:2px;background:#357568;"></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;">
+      <div style="flex:1 1 260px;background:#ffffff;border-top:6px solid #d84b39;padding:28px 24px;border-radius:0;">
+        <p style="margin:0 0 10px;color:#357568;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:0.04em;">Join</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;">Sign up free and get 100 points to start.</p>
+      </div>
+      <div style="flex:1 1 260px;background:#ffffff;border-top:6px solid #e1914a;padding:28px 24px;border-radius:0;">
+        <p style="margin:0 0 10px;color:#357568;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:0.04em;">Earn</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;">Earn 4 points for every dollar you spend.</p>
+      </div>
+      <div style="flex:1 1 260px;background:#ffffff;border-top:6px solid #85a478;padding:28px 24px;border-radius:0;">
+        <p style="margin:0 0 10px;color:#357568;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:0.04em;">Redeem</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;">Use your points on free menu items, from our house ranch to fresh fired pizza.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REWARDS MENU -->
+  <section id="vip-rewards" style="max-width:1080px;margin:0 auto;padding:clamp(56px,8vw,88px) 16px clamp(56px,8vw,88px);scroll-margin-top:100px;">
+    <div style="display:flex;align-items:center;gap:16px;margin:0 0 48px;">
+      <div style="flex:1 1 auto;height:2px;background:#357568;"></div>
+      <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;font-size:15px;white-space:nowrap;">The Rewards Menu</p>
+      <div style="flex:1 1 auto;height:2px;background:#357568;"></div>
+    </div>
+
+    <!-- Reward images: export each item WITH its white backdrop shape baked in, as a transparent PNG. -->
+
+    <!-- 1 | House Ranch -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin:0 0 40px;">
+      <div style="flex:1 1 280px;max-width:440px;"><img src="https://popmenucloud.com/cdn-cgi/image/width=900,format=auto,fit=scale-down/tdrspvzk/b76a241c-7967-44da-857b-1999487e82f7.png" alt="Cup of MOZZ house ranch" style="display:block;width:100%;height:auto;"></div>
+      <div style="flex:1 1 280px;">
+        <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:0.03em;">House Ranch</p>
+        <p style="margin:6px 0 0;color:#357568;font-style:italic;font-size:clamp(24px,3.4vw,34px);">100 pts</p>
+      </div>
+    </div>
+
+    <!-- 2 | Organic Fountain Beverage -->
+    <div style="display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;gap:24px;margin:0 0 40px;">
+      <div style="flex:1 1 280px;max-width:440px;"><img src="https://popmenucloud.com/cdn-cgi/image/width=900,format=auto,fit=scale-down/tdrspvzk/179d7168-f8bd-405a-a783-c017bec04641.png" alt="Organic fountain soda with ice and a straw" style="display:block;width:100%;height:auto;"></div>
+      <div style="flex:1 1 280px;">
+        <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:0.03em;">Organic Fountain Beverage</p>
+        <p style="margin:6px 0 0;color:#357568;font-style:italic;font-size:clamp(24px,3.4vw,34px);">300 pts</p>
+      </div>
+    </div>
+
+    <!-- 3 | Chocolate Chip Cookie -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin:0 0 40px;">
+      <div style="flex:1 1 280px;max-width:440px;"><img src="https://popmenucloud.com/cdn-cgi/image/width=900,format=auto,fit=scale-down/tdrspvzk/4e4814b1-d9dd-4f81-a5fb-242bd4e4932a.png" alt="Stack of MOZZ chocolate chip cookies" style="display:block;width:100%;height:auto;"></div>
+      <div style="flex:1 1 280px;">
+        <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:0.03em;">Chocolate Chip Cookie</p>
+        <p style="margin:6px 0 0;color:#357568;font-style:italic;font-size:clamp(24px,3.4vw,34px);">300 pts</p>
+      </div>
+    </div>
+
+    <!-- 4 | Garlic Bread -->
+    <div style="display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;gap:24px;margin:0 0 40px;">
+      <div style="flex:1 1 280px;max-width:440px;"><img src="https://popmenucloud.com/cdn-cgi/image/width=900,format=auto,fit=scale-down/tdrspvzk/3576354e-2b57-4598-bab5-b738bb343edf.png" alt="Sourdough garlic bread with herb butter and red sauce" style="display:block;width:100%;height:auto;"></div>
+      <div style="flex:1 1 280px;">
+        <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:0.03em;">Garlic Bread</p>
+        <p style="margin:6px 0 0;color:#357568;font-style:italic;font-size:clamp(24px,3.4vw,34px);">575 pts</p>
+      </div>
+    </div>
+
+    <!-- 5 | Cheese Pizza -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin:0 0 40px;">
+      <div style="flex:1 1 280px;max-width:440px;"><img src="https://popmenucloud.com/cdn-cgi/image/width=900,format=auto,fit=scale-down/tdrspvzk/36a08f0f-9712-420d-b239-db660b567319.png" alt="MOZZ sourdough cheese pizza" style="display:block;width:100%;height:auto;"></div>
+      <div style="flex:1 1 280px;">
+        <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:0.03em;">Cheese Pizza</p>
+        <p style="margin:6px 0 0;color:#357568;font-style:italic;font-size:clamp(24px,3.4vw,34px);">575 pts</p>
+      </div>
+    </div>
+
+    <!-- 6 | Margherita or Pepperoni Pizza -->
+    <div style="display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;gap:24px;margin:0 0 40px;">
+      <div style="flex:1 1 280px;max-width:440px;"><img src="https://popmenucloud.com/cdn-cgi/image/width=900,format=auto,fit=scale-down/tdrspvzk/fd45668c-3fa2-4632-bd6f-01d5e4f79b6d.png" alt="MOZZ margherita and pepperoni pizzas" style="display:block;width:100%;height:auto;"></div>
+      <div style="flex:1 1 280px;">
+        <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:0.03em;">Margherita or Pepperoni Pizza</p>
+        <p style="margin:6px 0 0;color:#357568;font-style:italic;font-size:clamp(24px,3.4vw,34px);">1,000 pts</p>
+      </div>
+    </div>
+
+    <!-- 7 | Any Other Pizza -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin:0;">
+      <div style="flex:1 1 280px;max-width:440px;"><img src="https://popmenucloud.com/cdn-cgi/image/width=900,format=auto,fit=scale-down/tdrspvzk/09a28951-a226-48e9-8e07-718b6841df81.png" alt="MOZZ specialty pizza topped with arugula" style="display:block;width:100%;height:auto;"></div>
+      <div style="flex:1 1 280px;">
+        <p style="margin:0;color:#357568;font-weight:800;text-transform:uppercase;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:0.03em;">Any Other Pizza</p>
+        <p style="margin:6px 0 0;color:#357568;font-style:italic;font-size:clamp(24px,3.4vw,34px);">1,200 pts</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section id="vip-join" style="background:#2b2b2b;color:#ede6dd;padding:clamp(56px,8vw,80px) 16px;text-align:center;">
+    <div style="max-width:720px;margin:0 auto;">
+      <h2 style="margin:0 0 14px;color:#ede6dd;font-size:clamp(26px,4vw,40px);letter-spacing:0.06em;text-transform:uppercase;font-weight:800;line-height:1.1;">Start Earning Free Pizza Today</h2>
+      <p style="margin:0 0 36px;font-size:17px;line-height:1.6;">Eat more MOZZ, for less.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
+            <a href="#vip-locations" data-vip-join="closing_cta" style="display:inline-block;background:#d84b39;color:#ede6dd;text-decoration:none;text-transform:uppercase;font-weight:800;font-size:18px;letter-spacing:0.06em;padding:16px 32px;border-radius:0;box-shadow:6px 6px 0 #ede6dd;">Join MOZZ VIP</a>
+        <a href="https://order.toasttab.com/online/locations/2901bebd-9379-4521-a5e7-f649853028e3/default?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=order_now" style="display:inline-block;background:transparent;color:#ede6dd;text-decoration:none;text-transform:uppercase;font-weight:800;font-size:18px;letter-spacing:0.06em;padding:14px 30px;border:2px solid #ede6dd;border-radius:0;">Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TILE BORDER | BOTTOM -->
+  <div aria-hidden="true" style="width:100%;line-height:0;font-size:0;">
+    <div style="display:flex;width:100%;margin:0;padding:0;">
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#779d6f;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#da3c32;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#e3833e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#91c8b6;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#e3833e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#779d6f;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#136d5e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#ac9984;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#91c8b6;margin:0;padding:0;"></div>
+    </div>
+    <div style="display:flex;width:100%;margin:0;padding:0;">
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#e3833e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#136d5e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#ac9984;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#da3c32;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#91c8b6;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#da3c32;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#e3833e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:#136d5e;margin:0;padding:0;"></div>
+      <div style="flex:0 0 calc(100% / 15);width:calc(100% / 15);aspect-ratio:1 / 1;background:transparent;margin:0;padding:0;"></div>
+    </div>
+  </div>
+
+
+  <!-- FLOATING JOIN BUTTON | appears after the hero scrolls away, hides when the closing CTA is on screen -->
+  <a id="vip-float" href="#vip-locations" data-vip-join="floating_button" aria-hidden="true" tabindex="-1" style="position:fixed;left:50%;bottom:20px;z-index:9999;display:inline-block;background:#d84b39;color:#ede6dd;text-decoration:none;text-transform:uppercase;font-weight:800;font-size:17px;letter-spacing:0.08em;line-height:1;padding:16px 30px;border-radius:0;box-shadow:6px 6px 0 #ede6dd;white-space:nowrap;opacity:0;pointer-events:none;transform:translate(-50%,24px);transition:opacity 0.3s ease, transform 0.3s ease;">Join MOZZ VIP</a>
+  <script>
+  (function () {
+    var btn = document.getElementById('vip-float');
+    var hero = document.getElementById('vip-hero');
+    var join = document.getElementById('vip-join');
+    if (!btn || !hero || !join || !('IntersectionObserver' in window)) return;
+    var heroVisible = true, joinVisible = false;
+    function update() {
+      var show = !heroVisible && !joinVisible;
+      btn.style.opacity = show ? '1' : '0';
+      btn.style.pointerEvents = show ? 'auto' : 'none';
+      btn.style.transform = show ? 'translate(-50%,0)' : 'translate(-50%,24px)';
+      btn.setAttribute('aria-hidden', show ? 'false' : 'true');
+      btn.setAttribute('tabindex', show ? '0' : '-1');
+    }
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }, { threshold: 0 }).observe(hero);
+    new IntersectionObserver(function (e) { joinVisible = e[0].isIntersecting; update(); }, { threshold: 0.2 }).observe(join);
+  })();
+  </script>
+
+
+  <!-- FOOTNOTE | sign-up links by location. Fail safe if the modal script is stripped. -->
+  <p id="vip-locations" style="margin:0;padding:14px 16px 18px;text-align:center;font-size:12px;line-height:1.6;color:#2b2b2b;opacity:0.75;">Sign up by location: <a href="https://www.toasttab.com/mozz-145-n-university-ave/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=footnote" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Provo</a> | <a href="https://www.toasttab.com/mozz-south-jordan-10420-rubicon-road/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=footnote" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Daybreak</a> | <a href="https://www.toasttab.com/mozz-woodbine/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=footnote" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Woodbine</a> | <a href="https://www.toasttab.com/mozz-milk-block-416-e-900-s-suite-101/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=footnote" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Milk Block</a></p>
+
+  <!-- JOIN MODAL | location picker -->
+  <div id="vip-modal" role="dialog" aria-modal="true" aria-labelledby="vip-modal-title" aria-hidden="true" style="display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:rgba(43,43,43,0.75);align-items:center;justify-content:center;padding:16px;">
+    <div style="position:relative;background:#ede6dd;width:100%;max-width:440px;padding:44px 26px 20px;border-radius:0;box-shadow:10px 10px 0 #357568;text-align:center;animation:mozzModalIn 0.25s ease-out;">
+      <button id="vip-modal-close" type="button" aria-label="Close" style="position:absolute;top:8px;right:10px;background:transparent;border:0;padding:6px 10px;font-size:30px;line-height:1;color:#2b2b2b;cursor:pointer;border-radius:0;">&times;</button>
+      <p id="vip-modal-title" style="margin:0 0 6px;color:#357568;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:26px;line-height:1.1;">Pick Your MOZZ</p>
+      <p style="margin:0 0 24px;font-size:16px;line-height:1.5;color:#2b2b2b;">Choose your location to sign up.</p>
+        <a href="https://www.toasttab.com/mozz-145-n-university-ave/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=modal" data-vip-base="https://www.toasttab.com/mozz-145-n-university-ave/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026" target="_blank" rel="noopener" style="display:block;background:#357568;color:#ede6dd;text-decoration:none;padding:15px 18px;margin:0 0 12px;border-radius:0;">
+          <span style="display:block;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:18px;line-height:1.2;">Provo</span>
+          <span style="display:block;font-size:13px;line-height:1.4;opacity:0.85;margin:2px 0 0;">Downtown Provo</span>
+        </a>
+        <a href="https://www.toasttab.com/mozz-south-jordan-10420-rubicon-road/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=modal" data-vip-base="https://www.toasttab.com/mozz-south-jordan-10420-rubicon-road/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026" target="_blank" rel="noopener" style="display:block;background:#357568;color:#ede6dd;text-decoration:none;padding:15px 18px;margin:0 0 12px;border-radius:0;">
+          <span style="display:block;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:18px;line-height:1.2;">Daybreak</span>
+          <span style="display:block;font-size:13px;line-height:1.4;opacity:0.85;margin:2px 0 0;">South Jordan</span>
+        </a>
+        <a href="https://www.toasttab.com/mozz-woodbine/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=modal" data-vip-base="https://www.toasttab.com/mozz-woodbine/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026" target="_blank" rel="noopener" style="display:block;background:#357568;color:#ede6dd;text-decoration:none;padding:15px 18px;margin:0 0 12px;border-radius:0;">
+          <span style="display:block;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:18px;line-height:1.2;">Woodbine</span>
+          <span style="display:block;font-size:13px;line-height:1.4;opacity:0.85;margin:2px 0 0;">Granary District, SLC</span>
+        </a>
+        <a href="https://www.toasttab.com/mozz-milk-block-416-e-900-s-suite-101/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026&amp;utm_content=modal" data-vip-base="https://www.toasttab.com/mozz-milk-block-416-e-900-s-suite-101/rewardsSignup?utm_source=website&amp;utm_medium=loyalty_page&amp;utm_campaign=october_2026" target="_blank" rel="noopener" style="display:block;background:#357568;color:#ede6dd;text-decoration:none;padding:15px 18px;margin:0 0 12px;border-radius:0;">
+          <span style="display:block;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:18px;line-height:1.2;">Milk Block</span>
+          <span style="display:block;font-size:13px;line-height:1.4;opacity:0.85;margin:2px 0 0;">9th &amp; 9th, SLC</span>
+        </a>
+    </div>
+  </div>
+  <script>
+  (function () {
+    var modal = document.getElementById('vip-modal');
+    var closeBtn = document.getElementById('vip-modal-close');
+    if (!modal || !closeBtn) return;
+    var lastTrigger = null;
+    function openModal(e) {
+      e.preventDefault();
+      lastTrigger = e.currentTarget;
+      var src = lastTrigger.getAttribute('data-vip-join') || 'modal';
+      var opts = modal.querySelectorAll('a[data-vip-base]');
+      for (var k = 0; k < opts.length; k++) opts[k].href = opts[k].getAttribute('data-vip-base') + '&utm_content=' + src;
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      var first = modal.querySelector('a');
+      if (first) first.focus();
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastTrigger) lastTrigger.focus();
+    }
+    var triggers = document.querySelectorAll('[data-vip-join]');
+    for (var i = 0; i < triggers.length; i++) triggers[i].addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
+  })();
+  </script>
+
+</div>
