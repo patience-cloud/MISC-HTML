@@ -25,12 +25,7 @@ BF ribbon + countdown hide themselves after November 30th at 11:59 PM MT.
   <!-- IMG: hero lockup MOBILE | transparent PNG 1200 x 1500 -->
   <img data-ph data-lockup="mobile" data-onfail="mozzHgcLockupFail" src="https://popmenucloud.com/cdn-cgi/image/width=1200,format=auto,fit=scale-down/tdrspvzk/22745a99-d4c9-400e-bb08-953f7cd7ba1c.png" alt="Holiday Gifting Collection" style="display:none;width:100%;height:auto;margin:0 auto;">
   <h1 data-h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;color:#d84b39;">Holiday Gifting Collection</h1>
-  <div style="display:flex;align-items:center;gap:16px;max-width:720px;margin:32px auto 0;">
-    <span style="flex:1;height:2px;background:#d84b39;transform:rotate(-4deg);"></span>
-    <h2 style="margin:0;color:#d84b39;font-size:clamp(13px,2.6vw,18px);letter-spacing:4px;text-transform:uppercase;white-space:nowrap;line-height:1.2;">Limited-time gifting specials</h2>
-    <span style="flex:1;height:2px;background:#d84b39;transform:rotate(-4deg);"></span>
-  </div>
-  <p style="margin:16px 0 0;font-style:italic;color:#d84b39;font-size:20px;line-height:1.4;">A curated line-up of MOZZ goodies old and NEW!</p>
+  <p style="margin:32px 0 0;font-style:italic;color:#d84b39;font-size:20px;line-height:1.4;">A curated line-up of MOZZ goodies old and NEW!</p>
   <a href="#mozz-hgc-catalog" data-jump style="display:inline-block;margin:32px 0 0;background:#d84b39;color:#ede6dd;padding:16px 32px;min-height:48px;box-sizing:border-box;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;box-shadow:6px 6px 0 #357568;">Shop the Collection</a>
   <p style="margin:24px 0 0;color:#2b2b2b;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.8;">Provo | Daybreak | Milk Block<br>Available now through December 31st</p>
 </div>
@@ -90,7 +85,7 @@ H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(ol
   ov.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(43,43,43,.72);display:flex;align-items:center;justify-content:center;padding:24px;';
   var p=document.createElement('div');p.style.cssText='background:#ede6dd;width:100%;max-width:400px;padding:32px 24px 24px;box-shadow:8px 8px 0 #d84b39;';
   var t=document.createElement('div');t.textContent='Where are you ordering from?';t.style.cssText='color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;';p.appendChild(t);
-  var s=document.createElement('div');s.textContent='The Holiday Gifting Collection is at these three locations.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
+  var s=document.createElement('div');s.textContent='Available at Provo, Daybreak and Milk Block through December 31st.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
   H.locs.forEach(function(l){var a=document.createElement('a');a.href=l[2]+'?'+H.utm+'&utm_content='+item+'_'+l[3];
     a.style.cssText='display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 16px;margin:0 0 8px;background:#357568;color:#ede6dd;text-decoration:none;font-size:16px;font-weight:700;';
     var n=document.createElement('span');n.textContent=l[0];var m=document.createElement('span');m.textContent=l[1];m.style.cssText='font-size:13px;font-weight:400;opacity:.85;';a.appendChild(n);a.appendChild(m);p.appendChild(a);});
@@ -134,7 +129,9 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
 @keyframes mozzHgcTwinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
 @keyframes mozzHgcTileIn{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
 </style>
-<div data-jumpbar style="position:sticky;top:0;z-index:50;background:#357568;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;">
+<div data-jumpsentinel style="height:0;"></div>
+<div data-jumpspacer style="display:none;"></div>
+<div data-jumpbar style="position:relative;top:0;left:0;right:0;z-index:9000;background:#357568;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;">
  <div style="display:flex;width:max-content;margin:0 auto;padding:0 8px;">
   <a href="#mozz-hgc-cookies" data-jumplink style="display:flex;align-items:center;min-height:48px;padding:0 clamp(10px,2.5vw,32px);color:#ede6dd;text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;border-bottom:3px solid transparent;">Cookies</a><span aria-hidden="true" style="color:#ede6dd;opacity:.5;display:flex;align-items:center;">|</span>
   <a href="#mozz-hgc-cards" data-jumplink style="display:flex;align-items:center;min-height:48px;padding:0 clamp(10px,2.5vw,32px);color:#ede6dd;text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;border-bottom:3px solid transparent;">Cards</a><span aria-hidden="true" style="color:#ede6dd;opacity:.5;display:flex;align-items:center;">|</span>
@@ -144,7 +141,7 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
 </div>
 <div data-reveal style="max-width:1104px;margin:0 auto;padding:96px 24px 0;text-align:center;">
  <div style="color:#ede6dd;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin:0 0 16px;">The Collection</div>
- <p style="margin:0 auto;color:#ede6dd;font-size:clamp(22px,3vw,28px);line-height:1.35;max-width:760px;">Gift-ready cookies, gift certificates and DIY home baking, plus the classics. Available at Provo, Daybreak and Milk Block through December 31st.</p>
+ <p style="margin:0 auto;color:#ede6dd;font-size:clamp(22px,3vw,28px);line-height:1.35;max-width:760px;">Gift-ready cookies, gift certificates and DIY home baking, plus the classics.</p>
 </div>
 <div id="mozz-hgc-cookies" data-chapter style="padding:96px 0 0;">
  <div data-tiles data-onred style="margin:0 0 48px;"></div>
@@ -174,8 +171,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="holiday" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c9cc9b70-2667-4034-8913-91fff988014b.png" alt="Baker's Dozen Gift Box, Holiday, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
     <!-- IMG: bakers-dozen | holiday | Packaging | JPG 1200 x 1200 -->
     <img data-ph data-variant="holiday" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/9ea33d5f-2cd0-46dc-bf0e-20302395b58c.png" alt="Baker's Dozen Gift Box, Holiday, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
     <span style="position:absolute;top:16px;left:16px;background:#357568;color:#ede6dd;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;line-height:1;">Saves $15.50 vs. singles</span>
    </div>
@@ -212,8 +209,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="holiday" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c9cc9b70-2667-4034-8913-91fff988014b.png" alt="6 Pack Gift Box, Holiday, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
     <!-- IMG: six-pack | holiday | Packaging | JPG 1200 x 1200 -->
     <img data-ph data-variant="holiday" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/317fc2bd-7a35-48cf-a09f-28b4970881f3.png" alt="6 Pack Gift Box, Holiday, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
     <span style="position:absolute;top:16px;left:16px;background:#357568;color:#ede6dd;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;line-height:1;">Saves $6 vs. singles</span>
    </div>
@@ -238,8 +235,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/17ffd63c-8d8a-4af9-8d1f-baa48359c022.png" alt="Holiday Cookie, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
     <!-- IMG: holiday-cookie | Shot 3 | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="shot3" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c380d3b3-5edc-458c-b0ea-1745146d4137.png" alt="Holiday Cookie, shot 3" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -270,8 +267,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
    <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
     <!-- IMG: cert-free-pizza | Photo | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/694e5543-3c45-4872-ba73-a3bbac445272.png" alt="Free Pizza Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -289,8 +286,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
    <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
     <!-- IMG: cert-diy-pizza-kit | Photo | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/38081379-bee8-4e2d-91f3-c0dcfe2612dd.png" alt="Free DIY Pizza Kit Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -308,8 +305,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
    <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
     <!-- IMG: cert-free-cookie | Photo | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/bdd20969-027e-44d8-aff8-35f56209b34b.png" alt="Free Cookie Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -341,8 +338,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="all" data-shot="shot1" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/14263745-0c84-4fed-b4ff-dd6c6ff731ae.png" alt="Complete Home Baking Guide, shot 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
     <!-- IMG: baking-guide | Shot 2 | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/cebdf627-2b68-4fce-bf88-ed5c999ca60a.png" alt="Complete Home Baking Guide, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -363,8 +360,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="all" data-shot="shot1" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/cbbf0cf8-5eeb-4ddc-ba99-6db467a5624c.png" alt="DIY Pizza Kit, shot 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
     <!-- IMG: diy-pizza-kit | Shot 2 | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/d10799f1-d47b-4073-ab47-25a96f2b1c46.png" alt="DIY Pizza Kit, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -386,15 +383,14 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
  <div data-reveal style="border-top:2px solid #ede6dd;padding:48px 0 0;margin:0 0 48px;text-align:center;">
   <div style="color:#ede6dd;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin:0 0 8px;">Always in season</div>
   <h2 style="margin:0;color:#ede6dd;font-size:clamp(28px,5vw,40px);line-height:1.1;letter-spacing:2px;text-transform:uppercase;">Classic Gifts</h2>
-  <p style="margin:16px auto 0;color:#ede6dd;font-size:20px;line-height:1.4;max-width:560px;">The one that never misses, available all year.</p>
  </div>
  <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
   <div data-card data-reveal data-item="gift_card" style="flex:1 1 440px;max-width:536px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-wrap:wrap;">
    <div data-gal style="flex:1 1 180px;min-height:260px;position:relative;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
     <!-- IMG: gift-card | Photo | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/854b8ea9-9f03-4b91-995d-7ed7608a6890.png" alt="MOZZ Gift Card, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="flex:1 1 220px;padding:24px;display:flex;flex-direction:column;gap:16px;">
@@ -467,7 +463,7 @@ H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(ol
   ov.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(43,43,43,.72);display:flex;align-items:center;justify-content:center;padding:24px;';
   var p=document.createElement('div');p.style.cssText='background:#ede6dd;width:100%;max-width:400px;padding:32px 24px 24px;box-shadow:8px 8px 0 #d84b39;';
   var t=document.createElement('div');t.textContent='Where are you ordering from?';t.style.cssText='color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;';p.appendChild(t);
-  var s=document.createElement('div');s.textContent='The Holiday Gifting Collection is at these three locations.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
+  var s=document.createElement('div');s.textContent='Available at Provo, Daybreak and Milk Block through December 31st.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
   H.locs.forEach(function(l){var a=document.createElement('a');a.href=l[2]+'?'+H.utm+'&utm_content='+item+'_'+l[3];
     a.style.cssText='display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 16px;margin:0 0 8px;background:#357568;color:#ede6dd;text-decoration:none;font-size:16px;font-weight:700;';
     var n=document.createElement('span');n.textContent=l[0];var m=document.createElement('span');m.textContent=l[1];m.style.cssText='font-size:13px;font-weight:400;opacity:.85;';a.appendChild(n);a.appendChild(m);p.appendChild(a);});
@@ -508,7 +504,12 @@ var hov=window.matchMedia&&window.matchMedia('(hover: hover)').matches;
 });
 var bar=root.querySelector('[data-jumpbar]');
 function navOffset(){var n=document.querySelector('header');if(n){var p=getComputedStyle(n).position;if(p==='fixed'||p==='sticky')return n.offsetHeight;}return 0;}
-bar.style.top=navOffset()+'px';
+var sen=root.querySelector('[data-jumpsentinel]'),spc=root.querySelector('[data-jumpspacer]');
+function floatBar(){var off=navOffset(),h=bar.offsetHeight,r=root.getBoundingClientRect();
+  var on=sen.getBoundingClientRect().top<=off&&r.bottom>off+h+48;
+  if(on){spc.style.height=h+'px';H.show(spc);bar.style.position='fixed';bar.style.top=off+'px';}
+  else{H.hide(spc);bar.style.position='relative';bar.style.top='0';}}
+window.addEventListener('scroll',floatBar,{passive:true});window.addEventListener('resize',floatBar);floatBar();
 [].forEach.call(root.querySelectorAll('[data-jumplink]'),function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));
   var y=t.getBoundingClientRect().top+window.pageYOffset-bar.offsetHeight-navOffset();window.scrollTo({top:y,behavior:H.reduced?'auto':'smooth'});});});
 if('IntersectionObserver' in window){var links=root.querySelectorAll('[data-jumplink]');
@@ -539,20 +540,20 @@ window.addEventListener('scroll',stick,{passive:true});window.addEventListener('
  <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
   <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
    <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Order</div>
-   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Order online for quick pickup, or grab it at the counter. Holiday shopping, handled in minutes.</p>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Order online for quick pickup, or grab it at the counter.</p>
   </div>
   <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
    <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Specially packaged</div>
-   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Every box is sealed, labeled and dressed for the season, so it arrives looking like you went the extra mile.</p>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Every box is sealed, labeled and festive for the season, so it arrives looking like the gift that it is.</p>
   </div>
   <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
    <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Give</div>
-   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Our sourdough, our recipes, our very best, made for sharing around the table.</p>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Our sourdough, our recipes, our very best, made for thoughtful yet easy gifting.</p>
   </div>
  </div>
  <div data-reveal style="display:flex;align-items:center;gap:16px;max-width:560px;margin:64px auto 0;">
   <span style="flex:1;height:2px;background:#d84b39;"></span>
-  <p style="margin:0;color:#357568;font-size:20px;font-style:italic;line-height:1.4;text-align:center;">Local gifts do it better.</p>
+  <p style="margin:0;color:#357568;font-size:20px;font-style:italic;line-height:1.4;text-align:center;">Local gifts do it better!<br><span style="font-size:16px;letter-spacing:2px;">XOXO MOZZ</span></p>
   <span style="flex:1;height:2px;background:#d84b39;"></span>
  </div>
 </div></div>
@@ -637,7 +638,7 @@ window.addEventListener('scroll',stick,{passive:true});window.addEventListener('
  </div>
 </div>
 <!-- Sign-off -->
-<div data-tiles></div>
+<div data-tiles style="margin:64px 0 0;"></div>
 <div style="max-width:720px;margin:0 auto;padding:64px 24px 96px;text-align:center;">
  <img data-ph src="https://popmenucloud.com/cdn-cgi/image/width=400,format=auto,fit=scale-down/tdrspvzk/8e30ad76-03c6-49b2-9f55-700320dce773.png" alt="MOZZ Sourdough Pizza" style="display:block;height:64px;width:auto;margin:0 auto 24px;">
  <p style="margin:0 0 16px;color:#357568;font-size:20px;line-height:1.4;">Happy holidays, and thank you for supporting local.</p>
@@ -697,7 +698,7 @@ H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(ol
   ov.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(43,43,43,.72);display:flex;align-items:center;justify-content:center;padding:24px;';
   var p=document.createElement('div');p.style.cssText='background:#ede6dd;width:100%;max-width:400px;padding:32px 24px 24px;box-shadow:8px 8px 0 #d84b39;';
   var t=document.createElement('div');t.textContent='Where are you ordering from?';t.style.cssText='color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;';p.appendChild(t);
-  var s=document.createElement('div');s.textContent='The Holiday Gifting Collection is at these three locations.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
+  var s=document.createElement('div');s.textContent='Available at Provo, Daybreak and Milk Block through December 31st.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
   H.locs.forEach(function(l){var a=document.createElement('a');a.href=l[2]+'?'+H.utm+'&utm_content='+item+'_'+l[3];
     a.style.cssText='display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 16px;margin:0 0 8px;background:#357568;color:#ede6dd;text-decoration:none;font-size:16px;font-weight:700;';
     var n=document.createElement('span');n.textContent=l[0];var m=document.createElement('span');m.textContent=l[1];m.style.cssText='font-size:13px;font-weight:400;opacity:.85;';a.appendChild(n);a.appendChild(m);p.appendChild(a);});
