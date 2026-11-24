@@ -1,0 +1,726 @@
+<!--
+MOZZ | HOLIDAY GIFTING COLLECTION | mozz.pizza/gifting
+Paste as 3 separate PopMenu custom HTML blocks, in order (Block 1, 2, 3).
+Image placeholders: every <img> and the texture tile use the PopMenu resizer with the file ID left blank.
+Search "IMG:" to find each one. Paste the file name after /tdrspvzk/
+BF ribbon + countdown hide themselves after November 30th at 11:59 PM MT.
+-->
+<!-- ================= BLOCK 1 | HEADER: BF RIBBON + HERO ================= -->
+<div id="mozz-hgc-head" style="background:#ede6dd;margin:0;padding:0;overflow:hidden;">
+<style>
+@keyframes mozzHgcTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mozzHgcTwinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+@keyframes mozzHgcTileIn{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<!-- BF ribbon: auto-hides after Nov 30th 11:59 PM MT -->
+<a id="mozz-hgc-ribbon" href="https://www.mozzartisanpizza.com/gift-cards?utm_source=website&utm_medium=gifting_page&utm_campaign=november_2026&utm_content=bf_ribbon" aria-label="Black Friday through Cyber Monday: $125 gift card for $100 with code GCBF2026, online only" style="display:block;background:#2b2b2b;text-decoration:none;overflow:hidden;white-space:nowrap;border-bottom:4px solid #e1914a;">
+  <div data-track style="display:inline-flex;will-change:transform;"></div>
+</a>
+<!-- HERO -->
+<div style="max-width:1104px;margin:0 auto;padding:64px 24px 48px;text-align:center;position:relative;">
+  <span aria-hidden="true" data-sparkle style="position:absolute;top:40px;right:8%;color:#d84b39;font-size:32px;line-height:1;display:inline-block;animation:mozzHgcTwinkle 3600ms ease-in-out infinite;">&#10022;</span>
+  <span aria-hidden="true" data-sparkle style="position:absolute;top:47%;left:6%;color:#d84b39;font-size:20px;line-height:1;display:inline-block;animation:mozzHgcTwinkle 3600ms ease-in-out 1800ms infinite;">&#10022;</span>
+  <!-- IMG: hero lockup DESKTOP | transparent PNG 2400 x 1200 | "Holiday | Gifting Collection" -->
+  <img data-ph data-lockup="desktop" data-onfail="mozzHgcLockupFail" src="https://popmenucloud.com/cdn-cgi/image/width=2400,format=auto,fit=scale-down/tdrspvzk/ff31d5fe-d548-4342-a8fe-dcbc521cf36d.png" alt="Holiday Gifting Collection" style="display:block;width:100%;height:auto;margin:0 auto;">
+  <!-- IMG: hero lockup MOBILE | transparent PNG 1200 x 1500 -->
+  <img data-ph data-lockup="mobile" data-onfail="mozzHgcLockupFail" src="https://popmenucloud.com/cdn-cgi/image/width=1200,format=auto,fit=scale-down/tdrspvzk/22745a99-d4c9-400e-bb08-953f7cd7ba1c.png" alt="Holiday Gifting Collection" style="display:none;width:100%;height:auto;margin:0 auto;">
+  <h1 data-h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;color:#d84b39;">Holiday Gifting Collection</h1>
+  <div style="display:flex;align-items:center;gap:16px;max-width:720px;margin:32px auto 0;">
+    <span style="flex:1;height:2px;background:#d84b39;transform:rotate(-4deg);"></span>
+    <h2 style="margin:0;color:#d84b39;font-size:clamp(13px,2.6vw,18px);letter-spacing:4px;text-transform:uppercase;white-space:nowrap;line-height:1.2;">Limited-time gifting specials</h2>
+    <span style="flex:1;height:2px;background:#d84b39;transform:rotate(-4deg);"></span>
+  </div>
+  <p style="margin:16px 0 0;font-style:italic;color:#d84b39;font-size:20px;line-height:1.4;">A curated line-up of MOZZ goodies old and NEW!</p>
+  <a href="#mozz-hgc-catalog" data-jump style="display:inline-block;margin:32px 0 0;background:#d84b39;color:#ede6dd;padding:16px 32px;min-height:48px;box-sizing:border-box;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;box-shadow:6px 6px 0 #357568;">Shop the Collection</a>
+  <p style="margin:24px 0 0;color:#2b2b2b;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.8;">Provo | Daybreak | Milk Block<br>Available now through December 31st</p>
+</div>
+<!-- Gift tile row (built in JS). IMG: MOZZ seal | transparent PNG 600 x 600 goes in data-seal -->
+<div data-tiles data-seal="https://popmenucloud.com/cdn-cgi/image/width=600,height=600,format=auto,fit=scale-down/tdrspvzk/6a401ddc-3346-47a6-88cf-9d975c7e5168.png"></div>
+<script>
+
+if(!window.mozzHgc){(function(){
+var H={};
+H.reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+H.deadline=Date.UTC(2026,11,1,6,59,0); /* Nov 30th 11:59 PM MT */
+H.bfLive=function(){return Date.now()<H.deadline;};
+H.left=function(){var ms=Math.max(0,H.deadline-Date.now());var s=Math.floor(ms/1000);return{d:Math.floor(s/86400),h:Math.floor(s%86400/3600),m:Math.floor(s%3600/60),s:s%60};};
+H.hide=function(el){el.style.setProperty('display','none','important');};
+H.show=function(el,v){el.style.setProperty('display',v||'block','important');};
+H.ph=function(root){[].forEach.call(root.querySelectorAll('img[data-ph]'),function(img){
+  var fail=function(){img.style.setProperty('visibility','hidden','important');if(img.getAttribute('data-onfail')){var f=window[img.getAttribute('data-onfail')];if(f)f(img);}};
+  img.addEventListener('error',fail);if(img.complete&&!img.naturalWidth)fail();});};
+H.tiles=function(el,o){o=o||{};var played=false;var cream='#ede6dd';
+  var C={red:['#d84b39','#e1914a'],orange:['#e1914a','#d84b39'],sage:['#85a478','#357568'],mint:['#8ec7b6','#357568'],teal:['#357568','#8ec7b6']};
+  /* 7-column repeat taken from the packaging art: T = top row, B = bottom row, X = floating stack (hero only) */
+  var T=['red',0,'orange',0,'mint',0,'teal'],B=['seal','sage',0,'teal',0,'red',0],X=[0,0,0,0,0,'sage',0];
+  function size(w){return o.hero?(w>=900?96:(w>=600?72:48)):(w<600?32:48);}
+  function gift(name,x,y,S,delay,animate){var c=C[name];if(o.clear&&name==='orange')c=['#e1914a','#ede6dd'];var g=document.createElement('div');
+    g.style.cssText='position:absolute;left:'+x+'px;top:'+y+'px;width:'+S+'px;height:'+S+'px;background:'+c[0]+';';
+    var rw=Math.round(S*.19);var r=document.createElement('div');r.style.cssText='position:absolute;top:0;left:'+Math.round((S-rw)/2)+'px;width:'+rw+'px;height:'+S+'px;background:'+c[1]+';';g.appendChild(r);
+    var bw=Math.round(S*.4),bh=Math.round(S*.15);var bo=document.createElement('div');
+    bo.style.cssText='position:absolute;left:'+Math.round((S-bw)/2)+'px;top:'+(-bh)+'px;width:'+bw+'px;height:'+bh+'px;background:'+c[1]+';clip-path:polygon(0 0,50% 100%,100% 0,100% 100%,0 100%);-webkit-clip-path:polygon(0 0,50% 100%,100% 0,100% 100%,0 100%);';g.appendChild(bo);
+    if(animate&&!H.reduced){g.style.opacity='0';g.style.animation='mozzHgcTileIn 700ms cubic-bezier(.2,.7,.2,1) '+delay+'ms forwards';}
+    el.appendChild(g);}
+  function build(animate){el.innerHTML='';var w=el.clientWidth||window.innerWidth;var S=size(w);var bh=Math.round(S*.15);var n=Math.ceil(w/S);
+    var rows=2;el.style.position='relative';el.style.overflow='hidden';el.style.background=o.clear?'transparent':cream;el.style.height=(rows*S+bh)+'px';
+    var yX=bh,yT=(rows-2)*S+bh,yB=(rows-1)*S+bh;
+    var seq=o.clear?['orange','sage','teal','mint','orange','teal','sage']:['red','sage','orange','teal','mint'];
+    for(var i=0;i<n;i++){var x=i*S,dl=i*45,name=seq[i%seq.length];
+      if(i%2===0){gift(name,x,yT,S,dl+120,animate);
+        if(i===0&&o.seal){var sw=document.createElement('div');sw.style.cssText='position:absolute;left:0;top:'+yB+'px;width:'+S+'px;height:'+S+'px;background:'+cream+';';
+          var im=document.createElement('img');im.src=o.seal;im.alt='MOZZ seal';im.style.cssText='display:block;width:84%;height:84%;margin:8%;object-fit:contain;';
+          im.addEventListener('error',function(){im.style.visibility='hidden';});sw.appendChild(im);el.appendChild(sw);}}
+      else gift(name,x,yB,S,dl,animate);}
+  }
+  build(false);
+  if('IntersectionObserver' in window&&!H.reduced){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!played){played=true;build(true);io.disconnect();}});},{threshold:.4});io.observe(el);}
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){build(false);},200);});
+};
+H.reveal=function(root){var els=root.querySelectorAll('[data-reveal]');if(H.reduced||!('IntersectionObserver' in window))return;
+  [].forEach.call(els,function(el){el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 700ms ease-out, transform 700ms cubic-bezier(.2,.7,.2,1), box-shadow 300ms ease-out';});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;var sib=[].indexOf.call(el.parentNode.children,el);
+    setTimeout(function(){el.style.opacity='1';el.style.transform='translateY(0)';setTimeout(function(){el.style.transition='transform 300ms ease-out, box-shadow 300ms ease-out';},750);},Math.max(0,sib)*120);io.unobserve(el);}});},{threshold:.15});
+  [].forEach.call(els,function(el){io.observe(el);});};
+H.utm='utm_source=website&utm_medium=gifting_page&utm_campaign=november_2026';
+H.locs=[['Provo','Downtown Provo','https://order.toasttab.com/online/mozz-145-n-university-ave','provo'],
+  ['Daybreak','South Jordan','https://order.toasttab.com/online/mozz-south-jordan-10420-rubicon-road','daybreak'],
+  ['Milk Block','SLC | 9th & 9th','https://order.toasttab.com/online/mozz-milk-block-416-e-900-s-suite-101','milk_block']];
+H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(old)old.parentNode.removeChild(old);
+  var ov=document.createElement('div');ov.id='mozz-hgc-picker';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Choose a location');
+  ov.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(43,43,43,.72);display:flex;align-items:center;justify-content:center;padding:24px;';
+  var p=document.createElement('div');p.style.cssText='background:#ede6dd;width:100%;max-width:400px;padding:32px 24px 24px;box-shadow:8px 8px 0 #d84b39;';
+  var t=document.createElement('div');t.textContent='Where are you ordering from?';t.style.cssText='color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;';p.appendChild(t);
+  var s=document.createElement('div');s.textContent='The Holiday Gifting Collection is at these three locations.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
+  H.locs.forEach(function(l){var a=document.createElement('a');a.href=l[2]+'?'+H.utm+'&utm_content='+item+'_'+l[3];
+    a.style.cssText='display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 16px;margin:0 0 8px;background:#357568;color:#ede6dd;text-decoration:none;font-size:16px;font-weight:700;';
+    var n=document.createElement('span');n.textContent=l[0];var m=document.createElement('span');m.textContent=l[1];m.style.cssText='font-size:13px;font-weight:400;opacity:.85;';a.appendChild(n);a.appendChild(m);p.appendChild(a);});
+  var c=document.createElement('a');c.href='#';c.textContent='Close';c.style.cssText='display:block;text-align:center;margin:16px 0 0;padding:12px;color:#2b2b2b;font-size:14px;letter-spacing:2px;text-transform:uppercase;text-decoration:underline;';
+  function close(e){if(e)e.preventDefault();ov.parentNode&&ov.parentNode.removeChild(ov);document.removeEventListener('keydown',esc);}
+  function esc(e){if(e.key==='Escape')close();}
+  c.addEventListener('click',close);ov.addEventListener('click',function(e){if(e.target===ov)close();});document.addEventListener('keydown',esc);
+  p.appendChild(c);ov.appendChild(p);document.body.appendChild(ov);var f=p.querySelector('a');f&&f.focus();};
+window.mozzHgc=H;})();}
+
+(function(){var H=window.mozzHgc,root=document.getElementById('mozz-hgc-head');
+var rib=document.getElementById('mozz-hgc-ribbon');
+window.mozzHgcLockupFail=function(){[].forEach.call(root.querySelectorAll('[data-lockup]'),function(i){H.hide(i);});
+  var h=root.querySelector('[data-h1]');h.style.cssText='position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;margin:0;color:#d84b39;font-size:clamp(48px,11vw,128px);line-height:.95;letter-spacing:1px;text-transform:uppercase;transform:rotate(-4deg);';};
+function lock(){var m=window.innerWidth<768;[].forEach.call(root.querySelectorAll('[data-lockup]'),function(i){if(i.style.visibility==='hidden')return;(i.getAttribute('data-lockup')==='mobile')===m?H.show(i):H.hide(i);});}
+lock();window.addEventListener('resize',lock);
+H.ph(root);
+function spk(){[].forEach.call(root.querySelectorAll('[data-sparkle]'),function(s,i){if(H.reduced)s.style.animation='none';(window.innerWidth<768&&i===1)?H.hide(s):H.show(s,'inline-block');});}spk();window.addEventListener('resize',spk);
+if(!H.bfLive()){rib.parentNode.removeChild(rib);}else{
+  var items=['Black Friday through Cyber Monday', '$125 gift card for $100', 'Code GCBF2026', 'Online only', 'Ends in <span data-cd>--</span>'];var sep='<span style="color:#ede6dd;padding:0 24px;">|</span>';
+  var seg='';for(var r=0;r<3;r++){items.forEach(function(t){seg+='<span style="color:#e1914a;">'+t+'</span>'+sep;});}
+  var track=rib.querySelector('[data-track]');
+  track.innerHTML='<span data-seg style="display:inline-block;padding:12px 0 12px 24px;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.4;">'+seg+'</span><span aria-hidden="true" style="display:inline-block;padding:12px 0 12px 24px;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.4;">'+seg+'</span>';
+  if(!H.reduced){var w=track.querySelector('[data-seg]').offsetWidth||2400;track.style.animation='mozzHgcTicker '+Math.round(w/60)+'s linear infinite';
+    rib.addEventListener('mouseenter',function(){track.style.animationPlayState='paused';});rib.addEventListener('mouseleave',function(){track.style.animationPlayState='running';});}
+  function tick(){if(!H.bfLive()){rib.parentNode&&rib.parentNode.removeChild(rib);return;}var l=H.left();
+    [].forEach.call(rib.querySelectorAll('[data-cd]'),function(c){c.textContent=l.d+'D '+l.h+'H '+l.m+'M '+l.s+'S';});}
+  tick();setInterval(tick,1000);}
+var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttribute('data-seal')});
+[].forEach.call(root.querySelectorAll('[data-jump]'),function(a){a.addEventListener('click',function(e){var t=document.getElementById('mozz-hgc-catalog');if(t){e.preventDefault();t.scrollIntoView({behavior:H.reduced?'auto':'smooth'});}});});
+})();
+</script>
+</div>
+<!-- ================= END BLOCK 1 ================= -->
+
+<!-- ================= BLOCK 2 | CATALOG ================= -->
+<!-- Catalog background: Whisper Grain + Deep Velvet, pure CSS on deep red #b83c2e -->
+<div id="mozz-hgc-catalog" style="background-color:#b83c2e;background-image:radial-gradient(circle,rgba(0,0,0,.055) 0 .7px,transparent 1.1px),repeating-linear-gradient(115deg,rgba(0,0,0,.039) 0 1px,transparent 1px 3px),repeating-linear-gradient(115deg,rgba(255,220,205,.088) 0,transparent 160px,rgba(0,0,0,.121) 320px,transparent 480px,rgba(255,220,205,.088) 640px),radial-gradient(closest-side,rgba(0,0,0,.055),transparent),radial-gradient(closest-side,rgba(255,205,185,.044),transparent),radial-gradient(closest-side,rgba(70,0,0,.05),transparent);background-size:4px 4px,auto,auto,560px 420px,470px 620px,880px 700px;background-position:0 0,0 0,0 0,0 0,230px 160px,480px 340px;margin:0;padding:0 0 96px;">
+<style>
+@keyframes mozzHgcTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mozzHgcTwinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+@keyframes mozzHgcTileIn{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<div data-jumpbar style="position:sticky;top:0;z-index:50;background:#357568;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;">
+ <div style="display:flex;width:max-content;margin:0 auto;padding:0 8px;">
+  <a href="#mozz-hgc-cookies" data-jumplink style="display:flex;align-items:center;min-height:48px;padding:0 clamp(10px,2.5vw,32px);color:#ede6dd;text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;border-bottom:3px solid transparent;">Cookies</a><span aria-hidden="true" style="color:#ede6dd;opacity:.5;display:flex;align-items:center;">|</span>
+  <a href="#mozz-hgc-cards" data-jumplink style="display:flex;align-items:center;min-height:48px;padding:0 clamp(10px,2.5vw,32px);color:#ede6dd;text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;border-bottom:3px solid transparent;">Cards</a><span aria-hidden="true" style="color:#ede6dd;opacity:.5;display:flex;align-items:center;">|</span>
+  <a href="#mozz-hgc-home" data-jumplink style="display:flex;align-items:center;min-height:48px;padding:0 clamp(10px,2.5vw,32px);color:#ede6dd;text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;border-bottom:3px solid transparent;">DIY Home Baking</a><span aria-hidden="true" style="color:#ede6dd;opacity:.5;display:flex;align-items:center;">|</span>
+  <a href="#mozz-hgc-classics" data-jumplink style="display:flex;align-items:center;min-height:48px;padding:0 clamp(10px,2.5vw,32px);color:#ede6dd;text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;border-bottom:3px solid transparent;">Classic Gifts</a>
+ </div>
+</div>
+<div data-reveal style="max-width:1104px;margin:0 auto;padding:96px 24px 0;text-align:center;">
+ <div style="color:#ede6dd;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin:0 0 16px;">The Collection</div>
+ <p style="margin:0 auto;color:#ede6dd;font-size:clamp(22px,3vw,28px);line-height:1.35;max-width:760px;">Gift-ready cookies, gift certificates and DIY home baking, plus the classics. Available at Provo, Daybreak and Milk Block through December 31st.</p>
+</div>
+<div id="mozz-hgc-cookies" data-chapter style="padding:96px 0 0;">
+ <div data-tiles data-onred style="margin:0 0 48px;"></div>
+ <div style="max-width:1104px;margin:0 auto;padding:0 24px;">
+ <div data-reveal style="margin:0 0 48px;">
+  <h2 style="margin:0;color:#ede6dd;font-size:clamp(36px,7vw,64px);line-height:1;letter-spacing:2px;text-transform:uppercase;">Cookies</h2>
+  <p style="margin:16px 0 0;color:#ede6dd;font-size:20px;line-height:1.4;max-width:640px;">Large dark chocolate chip cookies, boxed for gifting.</p>
+ </div>
+ <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+  <div data-card data-reveal data-item="bakers_dozen" style="flex:1 1 300px;max-width:352px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-direction:column;">
+   <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: bakers-dozen | classic | Standard shot | JPG 1200 x 1200 -->
+    <img data-ph data-variant="classic" data-shot="standard" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/9404802a-3cf7-445e-8f71-eee77c976422.png" alt="Baker's Dozen Gift Box, Classic, standard shot" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <!-- IMG: bakers-dozen | classic | Macro | JPG 1200 x 1200 -->
+    <img data-ph data-variant="classic" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/a001cf69-0a21-4228-af7f-6c0ea8a86a53.png" alt="Baker's Dozen Gift Box, Classic, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: bakers-dozen | classic | Packaging | JPG 1200 x 1200 -->
+    <img data-ph data-variant="classic" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/9ea33d5f-2cd0-46dc-bf0e-20302395b58c.png" alt="Baker's Dozen Gift Box, Classic, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: bakers-dozen | half | Standard shot | JPG 1200 x 1200 -->
+    <img data-ph data-variant="half" data-shot="standard" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/4d73eae6-544a-41fe-a437-d28d63018c0e.png" alt="Baker's Dozen Gift Box, ½ and ½, standard shot" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: bakers-dozen | half | Macro | JPG 1200 x 1200 -->
+    <img data-ph data-variant="half" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/15a0abe7-a650-44d3-87f4-41f92a7f284e.png" alt="Baker's Dozen Gift Box, ½ and ½, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: bakers-dozen | half | Packaging | JPG 1200 x 1200 -->
+    <img data-ph data-variant="half" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/9ea33d5f-2cd0-46dc-bf0e-20302395b58c.png" alt="Baker's Dozen Gift Box, ½ and ½, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: bakers-dozen | holiday | Standard shot | JPG 1200 x 1200 -->
+    <img data-ph data-variant="holiday" data-shot="standard" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/22eaa9d9-dcc5-436a-a856-e9da02237cb1.png" alt="Baker's Dozen Gift Box, Holiday, standard shot" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: bakers-dozen | holiday | Macro | JPG 1200 x 1200 -->
+    <img data-ph data-variant="holiday" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c9cc9b70-2667-4034-8913-91fff988014b.png" alt="Baker's Dozen Gift Box, Holiday, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: bakers-dozen | holiday | Packaging | JPG 1200 x 1200 -->
+    <img data-ph data-variant="holiday" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/9ea33d5f-2cd0-46dc-bf0e-20302395b58c.png" alt="Baker's Dozen Gift Box, Holiday, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+    <span style="position:absolute;top:16px;left:16px;background:#357568;color:#ede6dd;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;line-height:1;">Saves $15.50 vs. singles</span>
+   </div>
+   <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">Baker's Dozen Gift Box</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;">$30</div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Thirteen of our large dark chocolate chip cookies, boxed and sealed for gifting.</p>
+    <div style="display:flex;"><a href="#" role="button" data-opt="classic" data-text="13 Classic: dark chocolate chip and Maldon sea salt." aria-pressed="true" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;border:2px solid #357568;margin-left:0px;background:#357568;color:#ede6dd;text-decoration:none;font-size:14px;font-weight:700;">Classic</a><a href="#" role="button" data-opt="half" data-text="7 Classic + 6 Holiday cookies." aria-pressed="false" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;border:2px solid #357568;margin-left:-2px;background:transparent;color:#357568;text-decoration:none;font-size:14px;font-weight:700;">½ &amp; ½</a><a href="#" role="button" data-opt="holiday" data-text="13 Holiday: holiday sprinkles, mini M&amp;M's and Maldon sea salt." aria-pressed="false" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;border:2px solid #357568;margin-left:-2px;background:transparent;color:#357568;text-decoration:none;font-size:14px;font-weight:700;">Holiday</a></div>
+    <p data-contents style="margin:0;color:#2b2b2b;font-size:14px;line-height:1.5;">13 Classic: dark chocolate chip and Maldon sea salt.</p>
+    <div style="flex:1;"></div>
+    <a href="#" role="button" data-order style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Order Now</a>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for the office party, or anyone feeding a crowd</p>
+   </div>
+  </div>
+  <div data-card data-reveal data-item="six_pack" style="flex:1 1 300px;max-width:352px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-direction:column;">
+   <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: six-pack | classic | Standard shot | JPG 1200 x 1200 -->
+    <img data-ph data-variant="classic" data-shot="standard" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/28e55416-2be3-423a-b117-bcf6587239ab.png" alt="6 Pack Gift Box, Classic, standard shot" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <!-- IMG: six-pack | classic | Macro | JPG 1200 x 1200 -->
+    <img data-ph data-variant="classic" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/a001cf69-0a21-4228-af7f-6c0ea8a86a53.png" alt="6 Pack Gift Box, Classic, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: six-pack | classic | Packaging | JPG 1200 x 1200 -->
+    <img data-ph data-variant="classic" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/317fc2bd-7a35-48cf-a09f-28b4970881f3.png" alt="6 Pack Gift Box, Classic, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: six-pack | half | Standard shot | JPG 1200 x 1200 -->
+    <img data-ph data-variant="half" data-shot="standard" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/3db3afae-16c4-461d-b533-1460bd33ad3c.png" alt="6 Pack Gift Box, ½ and ½, standard shot" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: six-pack | half | Macro | JPG 1200 x 1200 -->
+    <img data-ph data-variant="half" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/15a0abe7-a650-44d3-87f4-41f92a7f284e.png" alt="6 Pack Gift Box, ½ and ½, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: six-pack | half | Packaging | JPG 1200 x 1200 -->
+    <img data-ph data-variant="half" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/317fc2bd-7a35-48cf-a09f-28b4970881f3.png" alt="6 Pack Gift Box, ½ and ½, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: six-pack | holiday | Standard shot | JPG 1200 x 1200 -->
+    <img data-ph data-variant="holiday" data-shot="standard" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/ef4250f2-d327-493f-a6d1-bd0666f6aaf7.png" alt="6 Pack Gift Box, Holiday, standard shot" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: six-pack | holiday | Macro | JPG 1200 x 1200 -->
+    <img data-ph data-variant="holiday" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c9cc9b70-2667-4034-8913-91fff988014b.png" alt="6 Pack Gift Box, Holiday, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: six-pack | holiday | Packaging | JPG 1200 x 1200 -->
+    <img data-ph data-variant="holiday" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/317fc2bd-7a35-48cf-a09f-28b4970881f3.png" alt="6 Pack Gift Box, Holiday, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+    <span style="position:absolute;top:16px;left:16px;background:#357568;color:#ede6dd;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;line-height:1;">Saves $6 vs. singles</span>
+   </div>
+   <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">6 Pack Gift Box</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;">$15</div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Six of our large dark chocolate chip cookies, boxed and sealed for gifting.</p>
+    <div style="display:flex;"><a href="#" role="button" data-opt="classic" data-text="6 Classic: dark chocolate chip and Maldon sea salt." aria-pressed="true" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;border:2px solid #357568;margin-left:0px;background:#357568;color:#ede6dd;text-decoration:none;font-size:14px;font-weight:700;">Classic</a><a href="#" role="button" data-opt="half" data-text="3 Classic + 3 Holiday cookies." aria-pressed="false" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;border:2px solid #357568;margin-left:-2px;background:transparent;color:#357568;text-decoration:none;font-size:14px;font-weight:700;">½ &amp; ½</a><a href="#" role="button" data-opt="holiday" data-text="6 Holiday: holiday sprinkles, mini M&amp;M's and Maldon sea salt." aria-pressed="false" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;border:2px solid #357568;margin-left:-2px;background:transparent;color:#357568;text-decoration:none;font-size:14px;font-weight:700;">Holiday</a></div>
+    <p data-contents style="margin:0;color:#2b2b2b;font-size:14px;line-height:1.5;">6 Classic: dark chocolate chip and Maldon sea salt.</p>
+    <div style="flex:1;"></div>
+    <a href="#" role="button" data-order style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Order Now</a>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for neighbors, teachers and coworkers</p>
+   </div>
+  </div>
+  <div data-card data-reveal data-item="holiday_cookie" style="flex:1 1 300px;max-width:352px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-direction:column;">
+   <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: holiday-cookie | Shot 1 | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="shot1" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/895731b8-725e-42ae-971d-715f7606e367.png" alt="Holiday Cookie, shot 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <!-- IMG: holiday-cookie | Shot 2 | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/17ffd63c-8d8a-4af9-8d1f-baa48359c022.png" alt="Holiday Cookie, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <!-- IMG: holiday-cookie | Shot 3 | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="shot3" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c380d3b3-5edc-458c-b0ea-1745146d4137.png" alt="Holiday Cookie, shot 3" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+   </div>
+   <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
+    <div style="color:#d84b39;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin:0 0 -8px;">New this season</div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">Holiday Cookie</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;">$3.50</div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Dark chocolate chip with holiday sprinkles and mini M&amp;M's, finished with Maldon sea salt.</p>
+    <div style="flex:1;"></div>
+    <a href="#" role="button" data-order style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Order Now</a>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for a sweet treat next time you order MOZZ</p>
+   </div>
+  </div>
+ </div>
+ </div>
+</div>
+
+<div id="mozz-hgc-cards" data-chapter style="padding:96px 0 0;">
+ <div data-tiles data-onred style="margin:0 0 48px;"></div>
+ <div style="max-width:1104px;margin:0 auto;padding:0 24px;">
+ <div data-reveal style="margin:0 0 48px;">
+  <h2 style="margin:0;color:#ede6dd;font-size:clamp(36px,7vw,64px);line-height:1;letter-spacing:2px;text-transform:uppercase;">Cards</h2>
+  <p style="margin:16px 0 0;color:#ede6dd;font-size:20px;line-height:1.4;max-width:640px;">Gift certificates for pizza, cookies and activities at home.</p>
+ </div>
+ <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+  <div data-card data-reveal data-item="cert_pizza" style="flex:1 1 300px;max-width:352px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-direction:column;">
+   <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: cert-free-pizza | Photo | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/694e5543-3c45-4872-ba73-a3bbac445272.png" alt="Free Pizza Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+   </div>
+   <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">Free Pizza Gift Certificate</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;">$19</div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Good for any pizza on the menu. No purchase necessary.</p>
+    <div style="flex:1;"></div>
+    <a href="#" role="button" data-order style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Order Now</a>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for white elephant (it always gets stolen)</p>
+   </div>
+  </div>
+  <div data-card data-reveal data-item="cert_diy_kit" style="flex:1 1 300px;max-width:352px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-direction:column;">
+   <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: cert-diy-pizza-kit | Photo | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/38081379-bee8-4e2d-91f3-c0dcfe2612dd.png" alt="Free DIY Pizza Kit Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+   </div>
+   <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">Free DIY Pizza Kit Gift Certificate</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;">$36</div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Dough, sauce and cheese for 4 pizzas. No purchase necessary.</p>
+    <div style="flex:1;"></div>
+    <a href="#" role="button" data-order style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Order Now</a>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for families home on winter break</p>
+   </div>
+  </div>
+  <div data-card data-reveal data-item="cert_cookie" style="flex:1 1 300px;max-width:352px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-direction:column;">
+   <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: cert-free-cookie | Photo | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/bdd20969-027e-44d8-aff8-35f56209b34b.png" alt="Free Cookie Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+   </div>
+   <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">Free Cookie Gift Certificate</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;">$3.50</div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Good for one cookie of any kind. No purchase necessary.</p>
+    <div style="flex:1;"></div>
+    <a href="#" role="button" data-order style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Order Now</a>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for stocking stuffers and Secret Santa</p>
+   </div>
+  </div>
+ </div>
+ </div>
+</div>
+
+<div id="mozz-hgc-home" data-chapter style="padding:96px 0 0;">
+ <div data-tiles data-onred style="margin:0 0 48px;"></div>
+ <div style="max-width:1104px;margin:0 auto;padding:0 24px;">
+ <div data-reveal style="margin:0 0 48px;">
+  <h2 style="margin:0;color:#ede6dd;font-size:clamp(36px,7vw,64px);line-height:1;letter-spacing:2px;text-transform:uppercase;">DIY Home Baking</h2>
+  <p style="margin:16px 0 0;color:#ede6dd;font-size:20px;line-height:1.4;max-width:640px;">Everything you'd need to make MOZZ in your own kitchen.</p>
+ </div>
+ <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+  <div data-card data-reveal data-item="baking_guide" style="flex:1 1 300px;max-width:352px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-direction:column;">
+   <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: baking-guide | Shot 1 | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="shot1" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/14263745-0c84-4fed-b4ff-dd6c6ff731ae.png" alt="Complete Home Baking Guide, shot 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <!-- IMG: baking-guide | Shot 2 | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/cebdf627-2b68-4fce-bf88-ed5c999ca60a.png" alt="Complete Home Baking Guide, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+   </div>
+   <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">Complete Home Baking Guide</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;">$5</div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Our recipe cards for sourdough, tomato sauce and mozzarella, plus insider tips and tricks.</p>
+    <p style="margin:0;color:#357568;font-size:14px;line-height:1.5;font-weight:700;">Pairs with a DIY Pizza Kit.</p>
+    <div style="flex:1;"></div>
+    <a href="#" role="button" data-order style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Order Now</a>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for the home cook on your list</p>
+   </div>
+  </div>
+  <div data-card data-reveal data-item="diy_pizza_kit" style="flex:1 1 300px;max-width:352px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-direction:column;">
+   <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: diy-pizza-kit | Shot 1 | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="shot1" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/cbbf0cf8-5eeb-4ddc-ba99-6db467a5624c.png" alt="DIY Pizza Kit, shot 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <!-- IMG: diy-pizza-kit | Shot 2 | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/d10799f1-d47b-4073-ab47-25a96f2b1c46.png" alt="DIY Pizza Kit, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+   </div>
+   <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">DIY Pizza Kit</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;">$36</div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Dough, sauce and cheese for 4 pizzas. Pizza night, wrapped and ready.</p>
+    <div style="flex:1;"></div>
+    <a href="#" role="button" data-order style="display:flex;align-items:center;justify-content:center;min-height:48px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Order Now</a>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for a New Year's Eve pizza party at home</p>
+   </div>
+  </div>
+ </div>
+ </div>
+</div>
+
+<div id="mozz-hgc-classics" data-chapter style="max-width:1104px;margin:0 auto;padding:96px 24px 0;">
+ <div data-reveal style="border-top:2px solid #ede6dd;padding:48px 0 0;margin:0 0 48px;text-align:center;">
+  <div style="color:#ede6dd;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin:0 0 8px;">Always in season</div>
+  <h2 style="margin:0;color:#ede6dd;font-size:clamp(28px,5vw,40px);line-height:1.1;letter-spacing:2px;text-transform:uppercase;">Classic Gifts</h2>
+  <p style="margin:16px auto 0;color:#ede6dd;font-size:20px;line-height:1.4;max-width:560px;">The one that never misses, available all year.</p>
+ </div>
+ <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+  <div data-card data-reveal data-item="gift_card" style="flex:1 1 440px;max-width:536px;background:#ede6dd;box-shadow:8px 8px 0 #357568;display:flex;flex-wrap:wrap;">
+   <div data-gal style="flex:1 1 180px;min-height:260px;position:relative;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
+    <!-- IMG: gift-card | Photo | JPG 1200 x 1200 -->
+    <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/854b8ea9-9f03-4b91-995d-7ed7608a6890.png" alt="MOZZ Gift Card, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
+   </div>
+   <div style="flex:1 1 220px;padding:24px;display:flex;flex-direction:column;gap:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;">MOZZ Gift Card</div>
+     <div style="color:#357568;font-size:22px;line-height:1.2;font-weight:700;white-space:nowrap;"></div>
+    </div>
+    <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Good at all four MOZZ locations. The gift that always fits.</p>
+    <div style="flex:1;"></div>
+    <div><a href="https://www.mozzartisanpizza.com/gift-cards?utm_source=website&utm_medium=gifting_page&utm_campaign=november_2026&utm_content=classic_gift_card" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:#d84b39;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Buy a Gift Card</a></div>
+    <p style="margin:0;color:#2b2b2b;font-size:13px;font-style:italic;line-height:1.5;"><span aria-hidden="true" style="color:#d84b39;font-style:normal;">&#10022;</span> Good for the hard-to-shop-for (so, everyone)</p>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- Sticky mobile CTA -->
+<a href="#" role="button" id="mozz-hgc-sticky" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9000;min-height:56px;padding:0 24px env(safe-area-inset-bottom);background:#357568;color:#ede6dd;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;align-items:center;justify-content:center;border-top:4px solid #ede6dd;">Shop the Collection</a>
+<script>
+
+if(!window.mozzHgc){(function(){
+var H={};
+H.reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+H.deadline=Date.UTC(2026,11,1,6,59,0); /* Nov 30th 11:59 PM MT */
+H.bfLive=function(){return Date.now()<H.deadline;};
+H.left=function(){var ms=Math.max(0,H.deadline-Date.now());var s=Math.floor(ms/1000);return{d:Math.floor(s/86400),h:Math.floor(s%86400/3600),m:Math.floor(s%3600/60),s:s%60};};
+H.hide=function(el){el.style.setProperty('display','none','important');};
+H.show=function(el,v){el.style.setProperty('display',v||'block','important');};
+H.ph=function(root){[].forEach.call(root.querySelectorAll('img[data-ph]'),function(img){
+  var fail=function(){img.style.setProperty('visibility','hidden','important');if(img.getAttribute('data-onfail')){var f=window[img.getAttribute('data-onfail')];if(f)f(img);}};
+  img.addEventListener('error',fail);if(img.complete&&!img.naturalWidth)fail();});};
+H.tiles=function(el,o){o=o||{};var played=false;var cream='#ede6dd';
+  var C={red:['#d84b39','#e1914a'],orange:['#e1914a','#d84b39'],sage:['#85a478','#357568'],mint:['#8ec7b6','#357568'],teal:['#357568','#8ec7b6']};
+  /* 7-column repeat taken from the packaging art: T = top row, B = bottom row, X = floating stack (hero only) */
+  var T=['red',0,'orange',0,'mint',0,'teal'],B=['seal','sage',0,'teal',0,'red',0],X=[0,0,0,0,0,'sage',0];
+  function size(w){return o.hero?(w>=900?96:(w>=600?72:48)):(w<600?32:48);}
+  function gift(name,x,y,S,delay,animate){var c=C[name];if(o.clear&&name==='orange')c=['#e1914a','#ede6dd'];var g=document.createElement('div');
+    g.style.cssText='position:absolute;left:'+x+'px;top:'+y+'px;width:'+S+'px;height:'+S+'px;background:'+c[0]+';';
+    var rw=Math.round(S*.19);var r=document.createElement('div');r.style.cssText='position:absolute;top:0;left:'+Math.round((S-rw)/2)+'px;width:'+rw+'px;height:'+S+'px;background:'+c[1]+';';g.appendChild(r);
+    var bw=Math.round(S*.4),bh=Math.round(S*.15);var bo=document.createElement('div');
+    bo.style.cssText='position:absolute;left:'+Math.round((S-bw)/2)+'px;top:'+(-bh)+'px;width:'+bw+'px;height:'+bh+'px;background:'+c[1]+';clip-path:polygon(0 0,50% 100%,100% 0,100% 100%,0 100%);-webkit-clip-path:polygon(0 0,50% 100%,100% 0,100% 100%,0 100%);';g.appendChild(bo);
+    if(animate&&!H.reduced){g.style.opacity='0';g.style.animation='mozzHgcTileIn 700ms cubic-bezier(.2,.7,.2,1) '+delay+'ms forwards';}
+    el.appendChild(g);}
+  function build(animate){el.innerHTML='';var w=el.clientWidth||window.innerWidth;var S=size(w);var bh=Math.round(S*.15);var n=Math.ceil(w/S);
+    var rows=2;el.style.position='relative';el.style.overflow='hidden';el.style.background=o.clear?'transparent':cream;el.style.height=(rows*S+bh)+'px';
+    var yX=bh,yT=(rows-2)*S+bh,yB=(rows-1)*S+bh;
+    var seq=o.clear?['orange','sage','teal','mint','orange','teal','sage']:['red','sage','orange','teal','mint'];
+    for(var i=0;i<n;i++){var x=i*S,dl=i*45,name=seq[i%seq.length];
+      if(i%2===0){gift(name,x,yT,S,dl+120,animate);
+        if(i===0&&o.seal){var sw=document.createElement('div');sw.style.cssText='position:absolute;left:0;top:'+yB+'px;width:'+S+'px;height:'+S+'px;background:'+cream+';';
+          var im=document.createElement('img');im.src=o.seal;im.alt='MOZZ seal';im.style.cssText='display:block;width:84%;height:84%;margin:8%;object-fit:contain;';
+          im.addEventListener('error',function(){im.style.visibility='hidden';});sw.appendChild(im);el.appendChild(sw);}}
+      else gift(name,x,yB,S,dl,animate);}
+  }
+  build(false);
+  if('IntersectionObserver' in window&&!H.reduced){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!played){played=true;build(true);io.disconnect();}});},{threshold:.4});io.observe(el);}
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){build(false);},200);});
+};
+H.reveal=function(root){var els=root.querySelectorAll('[data-reveal]');if(H.reduced||!('IntersectionObserver' in window))return;
+  [].forEach.call(els,function(el){el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 700ms ease-out, transform 700ms cubic-bezier(.2,.7,.2,1), box-shadow 300ms ease-out';});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;var sib=[].indexOf.call(el.parentNode.children,el);
+    setTimeout(function(){el.style.opacity='1';el.style.transform='translateY(0)';setTimeout(function(){el.style.transition='transform 300ms ease-out, box-shadow 300ms ease-out';},750);},Math.max(0,sib)*120);io.unobserve(el);}});},{threshold:.15});
+  [].forEach.call(els,function(el){io.observe(el);});};
+H.utm='utm_source=website&utm_medium=gifting_page&utm_campaign=november_2026';
+H.locs=[['Provo','Downtown Provo','https://order.toasttab.com/online/mozz-145-n-university-ave','provo'],
+  ['Daybreak','South Jordan','https://order.toasttab.com/online/mozz-south-jordan-10420-rubicon-road','daybreak'],
+  ['Milk Block','SLC | 9th & 9th','https://order.toasttab.com/online/mozz-milk-block-416-e-900-s-suite-101','milk_block']];
+H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(old)old.parentNode.removeChild(old);
+  var ov=document.createElement('div');ov.id='mozz-hgc-picker';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Choose a location');
+  ov.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(43,43,43,.72);display:flex;align-items:center;justify-content:center;padding:24px;';
+  var p=document.createElement('div');p.style.cssText='background:#ede6dd;width:100%;max-width:400px;padding:32px 24px 24px;box-shadow:8px 8px 0 #d84b39;';
+  var t=document.createElement('div');t.textContent='Where are you ordering from?';t.style.cssText='color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;';p.appendChild(t);
+  var s=document.createElement('div');s.textContent='The Holiday Gifting Collection is at these three locations.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
+  H.locs.forEach(function(l){var a=document.createElement('a');a.href=l[2]+'?'+H.utm+'&utm_content='+item+'_'+l[3];
+    a.style.cssText='display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 16px;margin:0 0 8px;background:#357568;color:#ede6dd;text-decoration:none;font-size:16px;font-weight:700;';
+    var n=document.createElement('span');n.textContent=l[0];var m=document.createElement('span');m.textContent=l[1];m.style.cssText='font-size:13px;font-weight:400;opacity:.85;';a.appendChild(n);a.appendChild(m);p.appendChild(a);});
+  var c=document.createElement('a');c.href='#';c.textContent='Close';c.style.cssText='display:block;text-align:center;margin:16px 0 0;padding:12px;color:#2b2b2b;font-size:14px;letter-spacing:2px;text-transform:uppercase;text-decoration:underline;';
+  function close(e){if(e)e.preventDefault();ov.parentNode&&ov.parentNode.removeChild(ov);document.removeEventListener('keydown',esc);}
+  function esc(e){if(e.key==='Escape')close();}
+  c.addEventListener('click',close);ov.addEventListener('click',function(e){if(e.target===ov)close();});document.addEventListener('keydown',esc);
+  p.appendChild(c);ov.appendChild(p);document.body.appendChild(ov);var f=p.querySelector('a');f&&f.focus();};
+window.mozzHgc=H;})();}
+
+(function(){var H=window.mozzHgc,root=document.getElementById('mozz-hgc-catalog');
+H.ph(root);
+[].forEach.call(root.querySelectorAll('[data-tiles]'),function(t){H.tiles(t,{clear:true});});
+H.reveal(root);
+var hov=window.matchMedia&&window.matchMedia('(hover: hover)').matches;
+[].forEach.call(root.querySelectorAll('[data-card]'),function(c){
+  if(hov){c.addEventListener('mouseenter',function(){c.style.transform='translate(-4px,-4px)';c.style.boxShadow='12px 12px 0 #357568';});
+    c.addEventListener('mouseleave',function(){c.style.transform='translate(0,0)';c.style.boxShadow='8px 8px 0 #357568';});}
+  var opts=c.querySelectorAll('[data-opt]');var cur=opts.length?opts[0].getAttribute('data-opt'):'';var vk=cur||'all';var si=0;
+  var gal=c.querySelector('[data-gal]'),prev=gal.querySelector('[data-prev]'),next=gal.querySelector('[data-next]'),dots=gal.querySelector('[data-dots]');
+  function avail(){return [].filter.call(gal.querySelectorAll('img[data-variant="'+vk+'"]'),function(i){return i.style.visibility!=='hidden';});}
+  function render(){var list=avail();if(si>=list.length)si=0;
+    [].forEach.call(gal.querySelectorAll('img[data-shot]'),function(i){i.style.setProperty('opacity',(list[si]===i)?'1':'0','important');});
+    var multi=list.length>1;[prev,next].forEach(function(x){multi?H.show(x,'flex'):H.hide(x);});
+    dots.innerHTML='';if(multi){H.show(dots,'flex');list.forEach(function(i,n){var d=document.createElement('a');d.href='#';d.setAttribute('aria-label','Photo '+(n+1));
+      d.style.cssText='flex:1;height:4px;background:#ede6dd;opacity:'+(n===si?'1':'.45')+';transition:opacity 300ms ease-out;';
+      d.addEventListener('click',function(e){e.preventDefault();si=n;render();});dots.appendChild(d);});}else H.hide(dots);}
+  function step(d){var n=avail().length;if(n<2)return;si=(si+d+n)%n;render();}
+  prev.addEventListener('click',function(e){e.preventDefault();step(-1);});next.addEventListener('click',function(e){e.preventDefault();step(1);});
+  var tx=null;gal.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  gal.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)step(dx<0?1:-1);tx=null;});
+  [].forEach.call(gal.querySelectorAll('img[data-shot]'),function(i){i.addEventListener('load',render);i.addEventListener('error',function(){setTimeout(render,0);});});
+  setTimeout(render,0);
+  [].forEach.call(opts,function(o){o.addEventListener('click',function(e){e.preventDefault();cur=o.getAttribute('data-opt');vk=cur;si=0;
+    [].forEach.call(opts,function(x){var a=x===o;x.style.background=a?'#357568':'transparent';x.style.color=a?'#ede6dd':'#357568';x.setAttribute('aria-pressed',a?'true':'false');});
+    render();var ct=c.querySelector('[data-contents]');if(ct)ct.textContent=o.getAttribute('data-text');});});
+  var ob=c.querySelector('[data-order]');if(ob)ob.addEventListener('click',function(e){e.preventDefault();H.picker(c.getAttribute('data-item')+(cur?'_'+cur:''));});
+});
+var bar=root.querySelector('[data-jumpbar]');
+function navOffset(){var n=document.querySelector('header');if(n){var p=getComputedStyle(n).position;if(p==='fixed'||p==='sticky')return n.offsetHeight;}return 0;}
+bar.style.top=navOffset()+'px';
+[].forEach.call(root.querySelectorAll('[data-jumplink]'),function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));
+  var y=t.getBoundingClientRect().top+window.pageYOffset-bar.offsetHeight-navOffset();window.scrollTo({top:y,behavior:H.reduced?'auto':'smooth'});});});
+if('IntersectionObserver' in window){var links=root.querySelectorAll('[data-jumplink]');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){[].forEach.call(links,function(l){var on=l.getAttribute('href')==='#'+e.target.id;l.style.borderBottomColor=on?'#ede6dd':'transparent';if(on&&bar.scrollWidth>bar.clientWidth){bar.scrollTo({left:l.offsetLeft-(bar.clientWidth-l.offsetWidth)/2,behavior:H.reduced?'auto':'smooth'});}});}});},{rootMargin:'-40% 0px -55% 0px'});
+  [].forEach.call(root.querySelectorAll('[data-chapter]'),function(ch){io.observe(ch);});
+  window.addEventListener('scroll',function(){if(root.querySelector('[data-chapter]').getBoundingClientRect().top>window.innerHeight*.6){[].forEach.call(links,function(l){l.style.borderBottomColor='transparent';});}},{passive:true});}
+var st=document.getElementById('mozz-hgc-sticky');
+st.addEventListener('click',function(e){e.preventDefault();H.picker('sticky');});
+function stick(){if(window.innerWidth>=768){H.hide(st);return;}var hd=document.getElementById('mozz-hgc-head');var cl=document.getElementById('mozz-hgc-close');
+  var past=hd?hd.getBoundingClientRect().bottom<0:root.getBoundingClientRect().top<0;var near=cl?cl.getBoundingClientRect().top<window.innerHeight:root.getBoundingClientRect().bottom<window.innerHeight;
+  (past&&!near)?H.show(st,'flex'):H.hide(st);}
+window.addEventListener('scroll',stick,{passive:true});window.addEventListener('resize',stick);stick();
+})();
+</script>
+</div>
+<!-- ================= END BLOCK 2 ================= -->
+
+<!-- ================= BLOCK 3 | HOW IT WORKS + UGC (hidden) + BF COUNTDOWN + SIGN-OFF ================= -->
+<div id="mozz-hgc-close" style="background:#ede6dd;margin:0;padding:0;">
+<style>
+@keyframes mozzHgcTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mozzHgcTwinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+@keyframes mozzHgcTileIn{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<!-- How it works (slightly darker cream) -->
+<div style="background:#e3d8ca;"><div style="max-width:1104px;margin:0 auto;padding:96px 24px;">
+ <h2 data-reveal style="margin:0 0 48px;color:#357568;font-size:clamp(28px,5vw,40px);line-height:1.1;letter-spacing:2px;text-transform:uppercase;text-align:center;">How it works</h2>
+ <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+  <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
+   <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Order</div>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Order online for quick pickup, or grab it at the counter. Holiday shopping, handled in minutes.</p>
+  </div>
+  <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
+   <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Specially packaged</div>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Every box is sealed, labeled and dressed for the season, so it arrives looking like you went the extra mile.</p>
+  </div>
+  <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
+   <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Give</div>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Our sourdough, our recipes, our very best, made for sharing around the table.</p>
+  </div>
+ </div>
+ <div data-reveal style="display:flex;align-items:center;gap:16px;max-width:560px;margin:64px auto 0;">
+  <span style="flex:1;height:2px;background:#d84b39;"></span>
+  <p style="margin:0;color:#357568;font-size:20px;font-style:italic;line-height:1.4;text-align:center;">Local gifts do it better.</p>
+  <span style="flex:1;height:2px;background:#d84b39;"></span>
+ </div>
+</div></div>
+<!-- UGC grid: HIDDEN until content exists. To go live, change data-live="false" to "true" and display:none to display:block -->
+<div id="mozz-hgc-ugc" data-live="false" style="display:none;max-width:1104px;margin:0 auto;padding:0 24px 96px;">
+ <h2 style="margin:0 0 16px;color:#357568;font-size:clamp(28px,5vw,40px);line-height:1.1;letter-spacing:2px;text-transform:uppercase;text-align:center;">Unwrapped</h2>
+ <p style="margin:0 auto 48px;color:#2b2b2b;font-size:15px;line-height:1.5;text-align:center;max-width:480px;">How the Collection is showing up around Utah. Tag @mozz.pizza to be featured.</p>
+ <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+   <div style="flex:1 1 160px;max-width:336px;">
+    <div style="position:relative;padding-top:125%;background:#e2d7c8;overflow:hidden;">
+     <!-- IMG: UGC post 1 | JPG 1200 x 1500 -->
+     <img data-ph src="https://popmenucloud.com/cdn-cgi/image/width=600,height=750,format=auto,fit=cover/tdrspvzk/" alt="Guest photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div style="color:#357568;font-size:14px;font-weight:700;margin:8px 0 0;">@handle</div>
+   </div>
+   <div style="flex:1 1 160px;max-width:336px;">
+    <div style="position:relative;padding-top:125%;background:#e2d7c8;overflow:hidden;">
+     <!-- IMG: UGC post 2 | JPG 1200 x 1500 -->
+     <img data-ph src="https://popmenucloud.com/cdn-cgi/image/width=600,height=750,format=auto,fit=cover/tdrspvzk/" alt="Guest photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div style="color:#357568;font-size:14px;font-weight:700;margin:8px 0 0;">@handle</div>
+   </div>
+   <div style="flex:1 1 160px;max-width:336px;">
+    <div style="position:relative;padding-top:125%;background:#e2d7c8;overflow:hidden;">
+     <!-- IMG: UGC post 3 | JPG 1200 x 1500 -->
+     <img data-ph src="https://popmenucloud.com/cdn-cgi/image/width=600,height=750,format=auto,fit=cover/tdrspvzk/" alt="Guest photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div style="color:#357568;font-size:14px;font-weight:700;margin:8px 0 0;">@handle</div>
+   </div>
+   <div style="flex:1 1 160px;max-width:336px;">
+    <div style="position:relative;padding-top:125%;background:#e2d7c8;overflow:hidden;">
+     <!-- IMG: UGC post 4 | JPG 1200 x 1500 -->
+     <img data-ph src="https://popmenucloud.com/cdn-cgi/image/width=600,height=750,format=auto,fit=cover/tdrspvzk/" alt="Guest photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div style="color:#357568;font-size:14px;font-weight:700;margin:8px 0 0;">@handle</div>
+   </div>
+   <div style="flex:1 1 160px;max-width:336px;">
+    <div style="position:relative;padding-top:125%;background:#e2d7c8;overflow:hidden;">
+     <!-- IMG: UGC post 5 | JPG 1200 x 1500 -->
+     <img data-ph src="https://popmenucloud.com/cdn-cgi/image/width=600,height=750,format=auto,fit=cover/tdrspvzk/" alt="Guest photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div style="color:#357568;font-size:14px;font-weight:700;margin:8px 0 0;">@handle</div>
+   </div>
+   <div style="flex:1 1 160px;max-width:336px;">
+    <div style="position:relative;padding-top:125%;background:#e2d7c8;overflow:hidden;">
+     <!-- IMG: UGC post 6 | JPG 1200 x 1500 -->
+     <img data-ph src="https://popmenucloud.com/cdn-cgi/image/width=600,height=750,format=auto,fit=cover/tdrspvzk/" alt="Guest photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div style="color:#357568;font-size:14px;font-weight:700;margin:8px 0 0;">@handle</div>
+   </div>
+ </div>
+</div>
+<!-- BF countdown block: auto-hides after Nov 30th 11:59 PM MT -->
+<div id="mozz-hgc-bf" style="background:#2b2b2b;padding:64px 24px;border-top:8px solid #e1914a;border-bottom:8px solid #e1914a;">
+ <div data-reveal style="max-width:720px;margin:0 auto;text-align:center;">
+  <div style="color:#e1914a;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin:0 0 16px;">Black Friday through Cyber Monday</div>
+  <h2 style="margin:0;color:#ede6dd;font-size:clamp(28px,6vw,48px);line-height:1.1;text-transform:uppercase;letter-spacing:1px;">$125 gift card for $100</h2>
+  <div style="display:flex;gap:8px;justify-content:center;margin:32px 0;">
+   <div style="flex:1;max-width:120px;border:2px solid #e1914a;padding:16px 8px;text-align:center;">
+    <div data-unit="d" style="color:#e1914a;font-size:clamp(32px,7vw,48px);font-weight:700;line-height:1;">--</div>
+    <div style="color:#ede6dd;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0;">Days</div>
+   </div>
+   <div style="flex:1;max-width:120px;border:2px solid #e1914a;padding:16px 8px;text-align:center;">
+    <div data-unit="h" style="color:#e1914a;font-size:clamp(32px,7vw,48px);font-weight:700;line-height:1;">--</div>
+    <div style="color:#ede6dd;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0;">Hours</div>
+   </div>
+   <div style="flex:1;max-width:120px;border:2px solid #e1914a;padding:16px 8px;text-align:center;">
+    <div data-unit="m" style="color:#e1914a;font-size:clamp(32px,7vw,48px);font-weight:700;line-height:1;">--</div>
+    <div style="color:#ede6dd;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0;">Min</div>
+   </div>
+   <div style="flex:1;max-width:120px;border:2px solid #e1914a;padding:16px 8px;text-align:center;">
+    <div data-unit="s" style="color:#e1914a;font-size:clamp(32px,7vw,48px);font-weight:700;line-height:1;">--</div>
+    <div style="color:#ede6dd;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0;">Sec</div>
+   </div>
+  </div>
+  <div style="display:flex;justify-content:center;align-items:stretch;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
+   <div style="display:flex;align-items:center;min-height:48px;padding:0 16px;border:2px dashed #e1914a;color:#ede6dd;font-size:16px;letter-spacing:3px;">CODE&nbsp;<span style="color:#e1914a;font-weight:700;">GCBF2026</span></div>
+   <a href="#" role="button" data-copy style="display:flex;align-items:center;min-height:48px;padding:0 16px;border:2px solid #ede6dd;color:#ede6dd;text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;">Copy code</a>
+  </div>
+  <a href="https://www.mozzartisanpizza.com/gift-cards?utm_source=website&utm_medium=gifting_page&utm_campaign=november_2026&utm_content=bf_countdown" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 32px;background:#e1914a;color:#2b2b2b;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Buy a Gift Card</a>
+  <p style="margin:24px 0 0;color:#ede6dd;font-size:13px;line-height:1.5;opacity:.8;">Online only. Valid through November 30th at 11:59 PM MT. Redeemable at all four MOZZ locations.</p>
+ </div>
+</div>
+<!-- Sign-off -->
+<div data-tiles></div>
+<div style="max-width:720px;margin:0 auto;padding:64px 24px 96px;text-align:center;">
+ <img data-ph src="https://popmenucloud.com/cdn-cgi/image/width=400,format=auto,fit=scale-down/tdrspvzk/8e30ad76-03c6-49b2-9f55-700320dce773.png" alt="MOZZ Sourdough Pizza" style="display:block;height:64px;width:auto;margin:0 auto 24px;">
+ <p style="margin:0 0 16px;color:#357568;font-size:20px;line-height:1.4;">Happy holidays, and thank you for supporting local.</p>
+ <p style="margin:0;font-size:14px;letter-spacing:2px;text-transform:uppercase;"><a href="https://www.mozzartisanpizza.com/?utm_source=website&utm_medium=gifting_page&utm_campaign=november_2026&utm_content=signoff" style="color:#d84b39;text-decoration:none;">mozzartisanpizza.com</a> <span style="color:#2b2b2b;">|</span> <a href="https://www.instagram.com/mozz.pizza/" style="color:#d84b39;text-decoration:none;">@mozz.pizza</a></p>
+</div>
+<script>
+
+if(!window.mozzHgc){(function(){
+var H={};
+H.reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+H.deadline=Date.UTC(2026,11,1,6,59,0); /* Nov 30th 11:59 PM MT */
+H.bfLive=function(){return Date.now()<H.deadline;};
+H.left=function(){var ms=Math.max(0,H.deadline-Date.now());var s=Math.floor(ms/1000);return{d:Math.floor(s/86400),h:Math.floor(s%86400/3600),m:Math.floor(s%3600/60),s:s%60};};
+H.hide=function(el){el.style.setProperty('display','none','important');};
+H.show=function(el,v){el.style.setProperty('display',v||'block','important');};
+H.ph=function(root){[].forEach.call(root.querySelectorAll('img[data-ph]'),function(img){
+  var fail=function(){img.style.setProperty('visibility','hidden','important');if(img.getAttribute('data-onfail')){var f=window[img.getAttribute('data-onfail')];if(f)f(img);}};
+  img.addEventListener('error',fail);if(img.complete&&!img.naturalWidth)fail();});};
+H.tiles=function(el,o){o=o||{};var played=false;var cream='#ede6dd';
+  var C={red:['#d84b39','#e1914a'],orange:['#e1914a','#d84b39'],sage:['#85a478','#357568'],mint:['#8ec7b6','#357568'],teal:['#357568','#8ec7b6']};
+  /* 7-column repeat taken from the packaging art: T = top row, B = bottom row, X = floating stack (hero only) */
+  var T=['red',0,'orange',0,'mint',0,'teal'],B=['seal','sage',0,'teal',0,'red',0],X=[0,0,0,0,0,'sage',0];
+  function size(w){return o.hero?(w>=900?96:(w>=600?72:48)):(w<600?32:48);}
+  function gift(name,x,y,S,delay,animate){var c=C[name];if(o.clear&&name==='orange')c=['#e1914a','#ede6dd'];var g=document.createElement('div');
+    g.style.cssText='position:absolute;left:'+x+'px;top:'+y+'px;width:'+S+'px;height:'+S+'px;background:'+c[0]+';';
+    var rw=Math.round(S*.19);var r=document.createElement('div');r.style.cssText='position:absolute;top:0;left:'+Math.round((S-rw)/2)+'px;width:'+rw+'px;height:'+S+'px;background:'+c[1]+';';g.appendChild(r);
+    var bw=Math.round(S*.4),bh=Math.round(S*.15);var bo=document.createElement('div');
+    bo.style.cssText='position:absolute;left:'+Math.round((S-bw)/2)+'px;top:'+(-bh)+'px;width:'+bw+'px;height:'+bh+'px;background:'+c[1]+';clip-path:polygon(0 0,50% 100%,100% 0,100% 100%,0 100%);-webkit-clip-path:polygon(0 0,50% 100%,100% 0,100% 100%,0 100%);';g.appendChild(bo);
+    if(animate&&!H.reduced){g.style.opacity='0';g.style.animation='mozzHgcTileIn 700ms cubic-bezier(.2,.7,.2,1) '+delay+'ms forwards';}
+    el.appendChild(g);}
+  function build(animate){el.innerHTML='';var w=el.clientWidth||window.innerWidth;var S=size(w);var bh=Math.round(S*.15);var n=Math.ceil(w/S);
+    var rows=2;el.style.position='relative';el.style.overflow='hidden';el.style.background=o.clear?'transparent':cream;el.style.height=(rows*S+bh)+'px';
+    var yX=bh,yT=(rows-2)*S+bh,yB=(rows-1)*S+bh;
+    var seq=o.clear?['orange','sage','teal','mint','orange','teal','sage']:['red','sage','orange','teal','mint'];
+    for(var i=0;i<n;i++){var x=i*S,dl=i*45,name=seq[i%seq.length];
+      if(i%2===0){gift(name,x,yT,S,dl+120,animate);
+        if(i===0&&o.seal){var sw=document.createElement('div');sw.style.cssText='position:absolute;left:0;top:'+yB+'px;width:'+S+'px;height:'+S+'px;background:'+cream+';';
+          var im=document.createElement('img');im.src=o.seal;im.alt='MOZZ seal';im.style.cssText='display:block;width:84%;height:84%;margin:8%;object-fit:contain;';
+          im.addEventListener('error',function(){im.style.visibility='hidden';});sw.appendChild(im);el.appendChild(sw);}}
+      else gift(name,x,yB,S,dl,animate);}
+  }
+  build(false);
+  if('IntersectionObserver' in window&&!H.reduced){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!played){played=true;build(true);io.disconnect();}});},{threshold:.4});io.observe(el);}
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){build(false);},200);});
+};
+H.reveal=function(root){var els=root.querySelectorAll('[data-reveal]');if(H.reduced||!('IntersectionObserver' in window))return;
+  [].forEach.call(els,function(el){el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 700ms ease-out, transform 700ms cubic-bezier(.2,.7,.2,1), box-shadow 300ms ease-out';});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;var sib=[].indexOf.call(el.parentNode.children,el);
+    setTimeout(function(){el.style.opacity='1';el.style.transform='translateY(0)';setTimeout(function(){el.style.transition='transform 300ms ease-out, box-shadow 300ms ease-out';},750);},Math.max(0,sib)*120);io.unobserve(el);}});},{threshold:.15});
+  [].forEach.call(els,function(el){io.observe(el);});};
+H.utm='utm_source=website&utm_medium=gifting_page&utm_campaign=november_2026';
+H.locs=[['Provo','Downtown Provo','https://order.toasttab.com/online/mozz-145-n-university-ave','provo'],
+  ['Daybreak','South Jordan','https://order.toasttab.com/online/mozz-south-jordan-10420-rubicon-road','daybreak'],
+  ['Milk Block','SLC | 9th & 9th','https://order.toasttab.com/online/mozz-milk-block-416-e-900-s-suite-101','milk_block']];
+H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(old)old.parentNode.removeChild(old);
+  var ov=document.createElement('div');ov.id='mozz-hgc-picker';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Choose a location');
+  ov.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(43,43,43,.72);display:flex;align-items:center;justify-content:center;padding:24px;';
+  var p=document.createElement('div');p.style.cssText='background:#ede6dd;width:100%;max-width:400px;padding:32px 24px 24px;box-shadow:8px 8px 0 #d84b39;';
+  var t=document.createElement('div');t.textContent='Where are you ordering from?';t.style.cssText='color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;';p.appendChild(t);
+  var s=document.createElement('div');s.textContent='The Holiday Gifting Collection is at these three locations.';s.style.cssText='color:#2b2b2b;font-size:15px;line-height:1.5;margin:0 0 24px;';p.appendChild(s);
+  H.locs.forEach(function(l){var a=document.createElement('a');a.href=l[2]+'?'+H.utm+'&utm_content='+item+'_'+l[3];
+    a.style.cssText='display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 16px;margin:0 0 8px;background:#357568;color:#ede6dd;text-decoration:none;font-size:16px;font-weight:700;';
+    var n=document.createElement('span');n.textContent=l[0];var m=document.createElement('span');m.textContent=l[1];m.style.cssText='font-size:13px;font-weight:400;opacity:.85;';a.appendChild(n);a.appendChild(m);p.appendChild(a);});
+  var c=document.createElement('a');c.href='#';c.textContent='Close';c.style.cssText='display:block;text-align:center;margin:16px 0 0;padding:12px;color:#2b2b2b;font-size:14px;letter-spacing:2px;text-transform:uppercase;text-decoration:underline;';
+  function close(e){if(e)e.preventDefault();ov.parentNode&&ov.parentNode.removeChild(ov);document.removeEventListener('keydown',esc);}
+  function esc(e){if(e.key==='Escape')close();}
+  c.addEventListener('click',close);ov.addEventListener('click',function(e){if(e.target===ov)close();});document.addEventListener('keydown',esc);
+  p.appendChild(c);ov.appendChild(p);document.body.appendChild(ov);var f=p.querySelector('a');f&&f.focus();};
+window.mozzHgc=H;})();}
+
+(function(){var H=window.mozzHgc,root=document.getElementById('mozz-hgc-close');
+H.ph(root);H.reveal(root);
+[].forEach.call(root.querySelectorAll('[data-tiles]'),function(t){H.tiles(t);});
+var bf=document.getElementById('mozz-hgc-bf');
+if(!H.bfLive()){bf.parentNode.removeChild(bf);}else{
+  function tick(){if(!H.bfLive()){bf.parentNode&&bf.parentNode.removeChild(bf);return;}var l=H.left();
+    ['d','h','m','s'].forEach(function(u){var el=bf.querySelector('[data-unit="'+u+'"]');el.textContent=(u==='d'?l[u]:('0'+l[u]).slice(-2));});}
+  tick();setInterval(tick,1000);
+  var cp=bf.querySelector('[data-copy]');cp.addEventListener('click',function(e){e.preventDefault();
+    var done=function(){cp.textContent='Copied';setTimeout(function(){cp.textContent='Copy code';},2000);};
+    if(navigator.clipboard){navigator.clipboard.writeText('GCBF2026').then(done,done);}else{var ta=document.createElement('textarea');ta.value='GCBF2026';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(x){}document.body.removeChild(ta);done();}});
+}
+})();
+</script>
+</div>
+<!-- ================= END BLOCK 3 ================= -->
