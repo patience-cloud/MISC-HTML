@@ -27,7 +27,7 @@ BF ribbon + countdown hide themselves after November 30th at 11:59 PM MT.
   <h1 data-h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;color:#d84b39;">Holiday Gifting Collection</h1>
   <p style="margin:32px 0 0;font-style:italic;color:#d84b39;font-size:20px;line-height:1.4;">A curated line-up of MOZZ goodies old and NEW!</p>
   <a href="#mozz-hgc-catalog" data-jump style="display:inline-block;margin:32px 0 0;background:#d84b39;color:#ede6dd;padding:16px 32px;min-height:48px;box-sizing:border-box;text-decoration:none;font-size:14px;letter-spacing:2px;text-transform:uppercase;box-shadow:6px 6px 0 #357568;">Shop the Collection</a>
-  <p style="margin:24px 0 0;color:#2b2b2b;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.8;">Provo | Daybreak | Milk Block<br>Available now through December 31st</p>
+  <p style="margin:24px 0 0;color:#2b2b2b;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.8;">Provo | Daybreak | Milk Block<br>Available now through December&nbsp;31st</p>
 </div>
 <!-- Gift tile row (built in JS). IMG: MOZZ seal | transparent PNG 600 x 600 goes in data-seal -->
 <div data-tiles data-seal="https://popmenucloud.com/cdn-cgi/image/width=600,height=600,format=auto,fit=scale-down/tdrspvzk/6a401ddc-3346-47a6-88cf-9d975c7e5168.png"></div>
@@ -94,9 +94,15 @@ H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(ol
   function esc(e){if(e.key==='Escape')close();}
   c.addEventListener('click',close);ov.addEventListener('click',function(e){if(e.target===ov)close();});document.addEventListener('keydown',esc);
   p.appendChild(c);ov.appendChild(p);document.body.appendChild(ov);var f=p.querySelector('a');f&&f.focus();};
+H.inits={};
+H.register=function(id,fn){H.inits[id]=fn;H.scan();};
+H.scan=function(){for(var id in H.inits){var el=document.getElementById(id);if(el&&!el.__mozzInit){el.__mozzInit=true;try{H.inits[id](el);}catch(e){if(window.console)console.log('[mozz]',e);}}}};
+H.alive=function(el){return document.documentElement.contains(el);};
+if(window.MutationObserver){new MutationObserver(function(){clearTimeout(H._t);H._t=setTimeout(H.scan,60);}).observe(document.documentElement,{childList:true,subtree:true});}
+window.addEventListener('pageshow',function(){H.scan();});window.addEventListener('popstate',function(){setTimeout(H.scan,60);});
 window.mozzHgc=H;})();}
 
-(function(){var H=window.mozzHgc,root=document.getElementById('mozz-hgc-head');
+window.mozzHgc.register('mozz-hgc-head',function(root){var H=window.mozzHgc;
 var rib=document.getElementById('mozz-hgc-ribbon');
 window.mozzHgcLockupFail=function(){[].forEach.call(root.querySelectorAll('[data-lockup]'),function(i){H.hide(i);});
   var h=root.querySelector('[data-h1]');h.style.cssText='position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;margin:0;color:#d84b39;font-size:clamp(48px,11vw,128px);line-height:.95;letter-spacing:1px;text-transform:uppercase;transform:rotate(-4deg);';};
@@ -111,12 +117,12 @@ if(!H.bfLive()){rib.parentNode.removeChild(rib);}else{
   track.innerHTML='<span data-seg style="display:inline-block;padding:12px 0 12px 24px;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.4;">'+seg+'</span><span aria-hidden="true" style="display:inline-block;padding:12px 0 12px 24px;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.4;">'+seg+'</span>';
   if(!H.reduced){var w=track.querySelector('[data-seg]').offsetWidth||2400;track.style.animation='mozzHgcTicker '+Math.round(w/60)+'s linear infinite';
     rib.addEventListener('mouseenter',function(){track.style.animationPlayState='paused';});rib.addEventListener('mouseleave',function(){track.style.animationPlayState='running';});}
-  function tick(){if(!H.bfLive()){rib.parentNode&&rib.parentNode.removeChild(rib);return;}var l=H.left();
+  var tI;function tick(){if(!H.alive(rib)){clearInterval(tI);return;}if(!H.bfLive()){rib.parentNode&&rib.parentNode.removeChild(rib);return;}var l=H.left();
     [].forEach.call(rib.querySelectorAll('[data-cd]'),function(c){c.textContent=l.d+'D '+l.h+'H '+l.m+'M '+l.s+'S';});}
-  tick();setInterval(tick,1000);}
+  tick();tI=setInterval(tick,1000);}
 var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttribute('data-seal')});
 [].forEach.call(root.querySelectorAll('[data-jump]'),function(a){a.addEventListener('click',function(e){var t=document.getElementById('mozz-hgc-catalog');if(t){e.preventDefault();t.scrollIntoView({behavior:H.reduced?'auto':'smooth'});}});});
-})();
+});
 </script>
 </div>
 <!-- ================= END BLOCK 1 ================= -->
@@ -171,8 +177,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="holiday" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c9cc9b70-2667-4034-8913-91fff988014b.png" alt="Baker's Dozen Gift Box, Holiday, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
     <!-- IMG: bakers-dozen | holiday | Packaging | JPG 1200 x 1200 -->
     <img data-ph data-variant="holiday" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/9ea33d5f-2cd0-46dc-bf0e-20302395b58c.png" alt="Baker's Dozen Gift Box, Holiday, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
     <span style="position:absolute;top:16px;left:16px;background:#357568;color:#ede6dd;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;line-height:1;">Saves $15.50 vs. singles</span>
    </div>
@@ -209,8 +215,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="holiday" data-shot="macro" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c9cc9b70-2667-4034-8913-91fff988014b.png" alt="6 Pack Gift Box, Holiday, macro" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
     <!-- IMG: six-pack | holiday | Packaging | JPG 1200 x 1200 -->
     <img data-ph data-variant="holiday" data-shot="packaging" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/317fc2bd-7a35-48cf-a09f-28b4970881f3.png" alt="6 Pack Gift Box, Holiday, packaging" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
     <span style="position:absolute;top:16px;left:16px;background:#357568;color:#ede6dd;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;line-height:1;">Saves $6 vs. singles</span>
    </div>
@@ -235,8 +241,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/17ffd63c-8d8a-4af9-8d1f-baa48359c022.png" alt="Holiday Cookie, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
     <!-- IMG: holiday-cookie | Shot 3 | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="shot3" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/c380d3b3-5edc-458c-b0ea-1745146d4137.png" alt="Holiday Cookie, shot 3" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -267,8 +273,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
    <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
     <!-- IMG: cert-free-pizza | Photo | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/694e5543-3c45-4872-ba73-a3bbac445272.png" alt="Free Pizza Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -286,8 +292,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
    <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
     <!-- IMG: cert-diy-pizza-kit | Photo | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/38081379-bee8-4e2d-91f3-c0dcfe2612dd.png" alt="Free DIY Pizza Kit Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -305,8 +311,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
    <div data-gal style="position:relative;width:100%;padding-top:100%;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
     <!-- IMG: cert-free-cookie | Photo | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/bdd20969-027e-44d8-aff8-35f56209b34b.png" alt="Free Cookie Gift Certificate, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -338,8 +344,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="all" data-shot="shot1" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/14263745-0c84-4fed-b4ff-dd6c6ff731ae.png" alt="Complete Home Baking Guide, shot 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
     <!-- IMG: baking-guide | Shot 2 | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/cebdf627-2b68-4fce-bf88-ed5c999ca60a.png" alt="Complete Home Baking Guide, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -360,8 +366,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
     <img data-ph data-variant="all" data-shot="shot1" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/cbbf0cf8-5eeb-4ddc-ba99-6db467a5624c.png" alt="DIY Pizza Kit, shot 1" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
     <!-- IMG: diy-pizza-kit | Shot 2 | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="shot2" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/d10799f1-d47b-4073-ab47-25a96f2b1c46.png" alt="DIY Pizza Kit, shot 2" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="padding:24px;display:flex;flex-direction:column;gap:16px;flex:1;">
@@ -389,8 +395,8 @@ var tl=root.querySelector('[data-tiles]');H.tiles(tl,{hero:true,seal:tl.getAttri
    <div data-gal style="flex:1 1 180px;min-height:260px;position:relative;background:#e2d7c8;overflow:hidden;touch-action:pan-y;">
     <!-- IMG: gift-card | Photo | JPG 1200 x 1200 -->
     <img data-ph data-variant="all" data-shot="main" src="https://popmenucloud.com/cdn-cgi/image/width=800,height=800,format=auto,fit=cover/tdrspvzk/854b8ea9-9f03-4b91-995d-7ed7608a6890.png" alt="MOZZ Gift Card, photo" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;transition:opacity 600ms ease-out;">
-    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;left:0;">&#8249;</a>
-    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-20px;width:40px;height:40px;align-items:center;justify-content:center;background:#ede6dd;color:#357568;text-decoration:none;font-size:22px;line-height:1;font-weight:700;z-index:2;right:0;">&#8250;</a>
+    <a href="#" role="button" data-prev aria-label="Previous photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;left:8px;">&#8249;</a>
+    <a href="#" role="button" data-next aria-label="Next photo" style="display:none;position:absolute;top:50%;margin-top:-18px;width:36px;height:36px;align-items:center;justify-content:center;background:rgba(43,43,43,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:rgba(255,255,255,.92);text-decoration:none;font-size:22px;line-height:1;z-index:2;right:8px;">&#8250;</a>
     <div data-dots style="display:none;position:absolute;left:16px;right:16px;bottom:16px;gap:4px;z-index:2;"></div>
    </div>
    <div style="flex:1 1 220px;padding:24px;display:flex;flex-direction:column;gap:16px;">
@@ -472,9 +478,15 @@ H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(ol
   function esc(e){if(e.key==='Escape')close();}
   c.addEventListener('click',close);ov.addEventListener('click',function(e){if(e.target===ov)close();});document.addEventListener('keydown',esc);
   p.appendChild(c);ov.appendChild(p);document.body.appendChild(ov);var f=p.querySelector('a');f&&f.focus();};
+H.inits={};
+H.register=function(id,fn){H.inits[id]=fn;H.scan();};
+H.scan=function(){for(var id in H.inits){var el=document.getElementById(id);if(el&&!el.__mozzInit){el.__mozzInit=true;try{H.inits[id](el);}catch(e){if(window.console)console.log('[mozz]',e);}}}};
+H.alive=function(el){return document.documentElement.contains(el);};
+if(window.MutationObserver){new MutationObserver(function(){clearTimeout(H._t);H._t=setTimeout(H.scan,60);}).observe(document.documentElement,{childList:true,subtree:true});}
+window.addEventListener('pageshow',function(){H.scan();});window.addEventListener('popstate',function(){setTimeout(H.scan,60);});
 window.mozzHgc=H;})();}
 
-(function(){var H=window.mozzHgc,root=document.getElementById('mozz-hgc-catalog');
+window.mozzHgc.register('mozz-hgc-catalog',function(root){var H=window.mozzHgc;
 H.ph(root);
 [].forEach.call(root.querySelectorAll('[data-tiles]'),function(t){H.tiles(t,{clear:true});});
 H.reveal(root);
@@ -522,7 +534,7 @@ function stick(){if(window.innerWidth>=768){H.hide(st);return;}var hd=document.g
   var past=hd?hd.getBoundingClientRect().bottom<0:root.getBoundingClientRect().top<0;var near=cl?cl.getBoundingClientRect().top<window.innerHeight:root.getBoundingClientRect().bottom<window.innerHeight;
   (past&&!near)?H.show(st,'flex'):H.hide(st);}
 window.addEventListener('scroll',stick,{passive:true});window.addEventListener('resize',stick);stick();
-})();
+});
 </script>
 </div>
 <!-- ================= END BLOCK 2 ================= -->
@@ -540,20 +552,20 @@ window.addEventListener('scroll',stick,{passive:true});window.addEventListener('
  <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
   <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
    <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Order</div>
-   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Order online for quick pickup, or grab it at the counter. Holiday shopping, handled in minutes.</p>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Order online for quick pickup, or grab it at the counter.</p>
   </div>
   <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
    <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Specially packaged</div>
-   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Every box is sealed, labeled and dressed for the season, so it arrives looking like you went the extra mile.</p>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Every box is sealed, labeled and festive for the season, so it arrives looking like the gift that it is.</p>
   </div>
   <div data-reveal style="flex:1 1 240px;max-width:336px;border-top:4px solid #d84b39;padding:24px 0 0;">
    <div style="color:#357568;font-size:22px;font-weight:700;line-height:1.2;margin:0 0 8px;">Give</div>
-   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Our sourdough, our recipes, our very best, made for sharing around the table.</p>
+   <p style="margin:0;color:#2b2b2b;font-size:15px;line-height:1.5;">Our sourdough, our recipes, our very best, made for thoughtful yet easy gifting.</p>
   </div>
  </div>
  <div data-reveal style="display:flex;align-items:center;gap:16px;max-width:560px;margin:64px auto 0;">
   <span style="flex:1;height:2px;background:#d84b39;"></span>
-  <p style="margin:0;color:#357568;font-size:20px;font-style:italic;line-height:1.4;text-align:center;">Local gifts do it better.</p>
+  <p style="margin:0;color:#357568;font-size:20px;font-style:italic;line-height:1.4;text-align:center;">Local gifts do it better!<br><span style="font-size:16px;letter-spacing:2px;">XOXO MOZZ</span></p>
   <span style="flex:1;height:2px;background:#d84b39;"></span>
  </div>
 </div></div>
@@ -707,21 +719,27 @@ H.picker=function(item){var old=document.getElementById('mozz-hgc-picker');if(ol
   function esc(e){if(e.key==='Escape')close();}
   c.addEventListener('click',close);ov.addEventListener('click',function(e){if(e.target===ov)close();});document.addEventListener('keydown',esc);
   p.appendChild(c);ov.appendChild(p);document.body.appendChild(ov);var f=p.querySelector('a');f&&f.focus();};
+H.inits={};
+H.register=function(id,fn){H.inits[id]=fn;H.scan();};
+H.scan=function(){for(var id in H.inits){var el=document.getElementById(id);if(el&&!el.__mozzInit){el.__mozzInit=true;try{H.inits[id](el);}catch(e){if(window.console)console.log('[mozz]',e);}}}};
+H.alive=function(el){return document.documentElement.contains(el);};
+if(window.MutationObserver){new MutationObserver(function(){clearTimeout(H._t);H._t=setTimeout(H.scan,60);}).observe(document.documentElement,{childList:true,subtree:true});}
+window.addEventListener('pageshow',function(){H.scan();});window.addEventListener('popstate',function(){setTimeout(H.scan,60);});
 window.mozzHgc=H;})();}
 
-(function(){var H=window.mozzHgc,root=document.getElementById('mozz-hgc-close');
+window.mozzHgc.register('mozz-hgc-close',function(root){var H=window.mozzHgc;
 H.ph(root);H.reveal(root);
 [].forEach.call(root.querySelectorAll('[data-tiles]'),function(t){H.tiles(t);});
 var bf=document.getElementById('mozz-hgc-bf');
 if(!H.bfLive()){bf.parentNode.removeChild(bf);}else{
-  function tick(){if(!H.bfLive()){bf.parentNode&&bf.parentNode.removeChild(bf);return;}var l=H.left();
+  var tI;function tick(){if(!H.alive(bf)){clearInterval(tI);return;}if(!H.bfLive()){bf.parentNode&&bf.parentNode.removeChild(bf);return;}var l=H.left();
     ['d','h','m','s'].forEach(function(u){var el=bf.querySelector('[data-unit="'+u+'"]');el.textContent=(u==='d'?l[u]:('0'+l[u]).slice(-2));});}
-  tick();setInterval(tick,1000);
+  tick();tI=setInterval(tick,1000);
   var cp=bf.querySelector('[data-copy]');cp.addEventListener('click',function(e){e.preventDefault();
     var done=function(){cp.textContent='Copied';setTimeout(function(){cp.textContent='Copy code';},2000);};
     if(navigator.clipboard){navigator.clipboard.writeText('GCBF2026').then(done,done);}else{var ta=document.createElement('textarea');ta.value='GCBF2026';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(x){}document.body.removeChild(ta);done();}});
 }
-})();
+});
 </script>
 </div>
 <!-- ================= END BLOCK 3 ================= -->
